@@ -1,0 +1,16 @@
+//
+// Wireframe
+//
+
+// Global wireframe styles
+
+.wire-region {
+  border: $borderwidth $borderstyle $bordercolor;
+  margin-top: $space-quarter;
+  margin-bottom: $space-quarter;
+  padding-top: $space;
+  padding-bottom: $space;
+  font-weight: $headline-font-weight;
+  text-align: center;
+  background-color: $verylightgray;
+}

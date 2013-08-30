@@ -1,0 +1,26 @@
+<!doctype html>
+
+{% include "head/conditional" %}
+
+<head>
+<title>{% block title %}This is the default template{% endblock %}</title>
+{% include "head/meta" %}
+{% include "head/css" %}
+{% include "head/scripts" %}
+	
+<!-- Application-specific meta tags -->
+{% include "head/windows" %}
+{% include "head/twitter" %}
+{% include "head/facebook" %}
+{% include "head/icons" %}
+</head>
+
+<body>
+  {% include "global-header" %}
+  <section id="Content">
+      {% block content %}{% endblock %}
+  </section>
+  {% include "global-footer" %}
+</body>
+
+</html>

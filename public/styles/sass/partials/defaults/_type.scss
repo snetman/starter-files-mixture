@@ -1,0 +1,60 @@
+//
+// Typography
+//
+
+
+// Lists
+
+li {
+  margin-bottom: .75rem; // 12px
+}
+
+ul {
+  padding-left: 1em; // decrease the left padding on lists
+  li {
+      list-style-type: disc;
+  }
+}
+
+ol {
+  padding-left: .5em; // decrease the left padding on lists
+  li {
+    margin-left: $space-half;
+  }
+}
+
+// Set the list item labelling style for nested ordered lists
+
+ol li {
+  list-style-type: decimal; // 1. , 2. , 3.
+  li {
+    list-style-type: upper-alpha; // A. , B. , C.
+    li {
+      list-style-type: lower-roman; // i. , ii. , iii.
+      li {
+        list-style-type: lower-alpha; // a. , b. , c.
+      }
+    }
+  }
+}
+
+// Set the list item labeling style for ordered lists nested inside of unordered lists
+
+ul li {
+  ol li {
+    list-style-type: decimal; // 1. , 2. , 3.
+    li {
+      list-style-type: upper-alpha; // A. , B. , C.
+    }
+  }
+}
+
+// Set the list item labeling for nested unordered lists
+
+ul li {
+  li {
+    list-style-type: circle;
+  }
+}
+
+

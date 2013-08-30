@@ -1,0 +1,38 @@
+/* =======================================================
+    Site footer
+   ======================================================= */
+
+.site-footer {
+	clear: both;
+	overflow: hidden;
+	background: $gray-dark;
+	color: $white;
+
+	a {
+		color: $gray-light;
+	}
+	
+}
+
+//Footer Nav
+
+.nav-footer {
+	li {
+		border-bottom: 1px solid $gray-dark;
+
+		@include break($bp-med) {
+			border: 0;
+			float: left;
+		}
+	}
+	a {
+		display: block;
+		padding: $pad;
+	}
+}
+
+// Copyright
+
+.copyright {
+  font-size: $font-size-small;
+}

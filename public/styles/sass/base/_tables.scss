@@ -1,0 +1,23 @@
+/* =======================================================
+    Tables
+   ======================================================= */
+
+table {
+	border-collapse: collapse; 
+	border-spacing: 0; 
+	border: $border-width $border-style $border-color;
+	width: 100%;
+}
+
+th {
+  background: $gray-light;
+	border: $border-width $border-style $border-color;
+	padding: 0.2em;
+	font-weight: $font-weight-headline;
+	text-align: left;
+}
+
+td {
+	border: $border-width $border-style $border-color;
+	padding: 0.2em;
+}

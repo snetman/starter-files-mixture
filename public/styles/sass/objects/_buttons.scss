@@ -1,0 +1,56 @@
+/* =======================================================
+    Buttons
+   ======================================================= */
+
+// Standard buttons
+
+.btn {
+	display: inline-block;
+	background: $gray-dark;
+	color: $white;
+	line-height: 1;
+	font-weight: $font-weight-headline;
+	padding: $pad;
+	border: 0;
+	text-align: center;
+	
+	&:hover, &:focus {
+		color: $white;
+	}
+
+	&.disabled {
+		background: $gray-light-2;
+		color: $gray-light-4;
+	}
+}
+
+// Small button
+
+.btn-small {
+	padding: $pad-half;
+}
+
+// Tiny button
+
+.btn-tiny {
+  padding: $pad-half;
+  font-size: $font-size-small;
+}
+
+// Large button
+
+.btn-large {
+	padding: $pad-half;
+	font-size: $font-size-large;
+}
+
+// Text button
+
+.text-btn {
+  display: inline-block;
+  padding: $pad-half;
+  background-color: $gray-light;
+	font-weight: $font-weight-headline;
+}
+
+// End buttons
