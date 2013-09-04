@@ -1,47 +1,6 @@
-/*------------------------------------*\
-    $LAYOUT
-\*------------------------------------*/
-
-/* Layout Container */
-.lc {
-	max-width: $max-width;	
-	margin: 0 auto;
-	padding: $pad-half;
-}
-
-/*------------------------------------*\
-    $TEMPLATES
-\*------------------------------------*/
-
-/* Two Column Layout */
-.l-two-col {
-	@extend .cf;
-
-	.l-main {
-		@media all and (min-width: $bp-large) {
-			float: left;
-			width: 70%;
-			padding-right: $pad;
-		}
-	}
-	
-	.l-sidebar {
-		@media all and (max-width: $bp-large) {
-			clear: both;
-		}
-
-		@media all and (min-width: $bp-large) {
-			float: left;
-			width: 30%;
-			padding: 0 0 0 $pad;
-		}
-	}
-}
-
-
-/*------------------------------------*\
-    $GRIDS
-\*------------------------------------*/
+/* =======================================================
+    Grid
+   ======================================================= */
 
 /* Grid Container */
 .g {

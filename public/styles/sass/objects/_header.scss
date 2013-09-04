@@ -1,21 +1,27 @@
-.header {
+/* =======================================================
+    Site header
+   ======================================================= */
+
+.site-header {
 	background: $white;
 	padding: 0;
-	border-bottom: 1px solid #dbdbdb;
+	border-bottom: $border-width $border-style $border-color;
 	@extend .lc;
 }
+
+/*  Logo
+   ======================================================= */
 
 .logo {
 	float: left;
 	max-width: 8rem;
 	margin: 0.4rem;
-
-	@media all and (min-width: $bp-med) {
-		max-width: 9rem;
-	}
 }
 
-.nav-toggle {
+/*  Menu toggle
+   ======================================================= */
+
+.menu-toggle {
 	float: right;
 	display: block;
 	padding: 0.9rem 1rem 0.7rem;
@@ -27,6 +33,9 @@
 		display: none;
 	}
 }
+
+/*  Search form
+   ======================================================= */
 
 .search-form {
 	overflow: hidden;

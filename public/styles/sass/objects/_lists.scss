@@ -1,10 +1,15 @@
+/* =======================================================
+    Lists
+   ======================================================= */
+
 .inline-list {
 	li {
 		display: inline-block;
 	}
 }
 
-/* Social List */
+// social list
+
 .social-list {
 	li {
 		margin: 0 0.4rem $space 0;
@@ -16,7 +21,8 @@
 }
 
 
-/* Headline List */
+// Headline list
+
 .headline-list {
 	margin-bottom: $space;
 
@@ -34,28 +40,52 @@
 	}
 }
 
-/* Post List */
+// Post list
+
 .post-list {
 	li {
 		margin-bottom: $space;
 	}
 }
 
-/* Bullet List */
+// Bullet list
+
 .bullet-list {
-	list-style: square;
-	margin: 0 0 1em 1.2em;
-	line-height: 1.3;
+	list-style: disc;
+	margin: 0 0 $space 1.2em;
+	line-height: 1.5;
 
 	li {
 		margin-bottom: $space;
 	}
 }
 
-/* Text List */
+// Numbered list
+
+.numbered-list {
+	margin: 0 0 $space 1em;
+	line-height: 1.5;
+
+	li {
+	  list-style-type: decimal;
+		margin-bottom: $space;
+    li {
+      list-style-type: upper-alpha; // A. , B. , C.
+      li {
+        list-style-type: lower-roman; // i. , ii. , iii.
+        li {
+          list-style-type: lower-alpha; // a. , b. , c.
+        }
+      }
+    }
+	}
+}
+
+// Text list
+
 .text-list {
-	margin: 0 0 1em;
-	line-height: 1.3;
+	margin: 0 0 $space;
+	line-height: 1.5;
 
 	li {
 		margin-bottom: $space;

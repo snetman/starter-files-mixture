@@ -47,7 +47,7 @@
 .block-hero {
 	margin-bottom: $space;
   
-  @include break($bp-large) {
+  @include breakpoint($bp-large) {
 		position: relative;
     
 		.b-text {
