@@ -6,22 +6,48 @@
 
 .btn {
 	display: inline-block;
-	background: $gray-dark;
-	color: $white;
+	background: $gray-light-4;
+	color: $gray-dark;
 	line-height: 1;
 	font-weight: $font-weight-headline;
 	padding: $pad;
-	border: 0;
+	border: $border-width $border-style $gray-dark;
 	text-align: center;
+	text-decoration: none;
 	
-	&:hover, &:focus {
-		color: $white;
+	&:hover, &:active, &:focus {
+		background-color: $white;
 	}
 
 	&.disabled {
 		background: $gray-light-2;
 		color: $gray-light-4;
 	}
+}
+
+/*  State buttons
+   ======================================================= */
+
+// Disabled button
+
+.btn-disabled {
+  border-color: $gray-light-4;
+  background-color: $gray-light;
+  color: $gray-light-4;
+  cursor: default;
+  &:hover {
+    background-color: $gray-light;
+    color: $gray-light-4;
+  }
+}
+
+/*  Sized buttons
+   ======================================================= */
+
+// Full button
+
+.btn-full {
+  display: block;
 }
 
 // Small button
@@ -51,6 +77,34 @@
   padding: $pad-half;
   background-color: $gray-light;
 	font-weight: $font-weight-headline;
+}
+
+/*  Button group
+   ======================================================= */
+
+.btn-group {
+
+  display: table;
+  width: 100%;
+  
+  .btn-group-inner {
+  
+    display: table-row;
+    
+    > div {
+      display: table-cell;
+      .btn {
+        border-right-width: 0;
+      }
+    }
+    
+    > div:last-child {
+      .btn {
+        border-right-width: $border-width;
+      }
+    }
+    
+  }
 }
 
 // End buttons

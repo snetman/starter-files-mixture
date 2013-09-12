@@ -2,25 +2,16 @@
     Blocks
    ======================================================= */
 
-// Generic placeholder brick. Remove for production
+// Generic block element
 
-.brick {
-	background: $gray-light-3;
-	padding: $pad-double;
-	text-align: center;
-	font-weight: $font-weight-headline;
-	border-bottom: 1px solid $gray-light-2;
-}
-
-/*  Generic block elements
-   ======================================================= */
-
-.block {
+[class*='block'] {
 	overflow: hidden;
+  @include clearfix;
 
 	p:last-child {
 		margin-bottom: 0;
 	}  
+
 }
 
 // Thumbnail
@@ -35,15 +26,81 @@
 
 .b-text {
   .headline {
-  	margin-bottom: 0;
+  	margin-bottom: $space-quarter;
   }  
 }
 
 /*  Block types
    ======================================================= */
 
-// Hero block
+// Switchable block
+// This block swaps between an image floated left and full width
 
+.block-switch {
+
+  .b-thumb {
+    @include float-span(1);
+  }
+  
+  .b-text {
+    @include float-span(3,'last');
+  }
+  
+  @include breakpoint($bp-med) {
+    
+    .b-thumb {
+      float: none;
+      margin: 0;
+      width: 100%;
+      img {
+        margin-bottom: $space-quarter;
+      }
+    }
+    .b-text {
+      float: none;
+      margin: 0;
+      width: 100%;
+    }
+  }
+}
+
+// Inset block
+
+.block-inset {
+	position: relative;
+
+	.b-thumb {
+		position: relative;
+		z-index: 0;
+
+		img {
+			margin-bottom: $space-half;
+		}
+	}
+}
+
+// Thumbnail block
+
+.block-thumb {
+  .b-thumb {
+    @include float-span(1);
+  }
+  .b-text {
+    @include float-span(3,'last');
+  }
+  
+  @include breakpoint($bp-med) {    
+    .b-thumb {
+      @include float-span(1);
+    }
+    .b-text {
+      @include float-span(5,'last');
+    }
+  }
+}
+
+// Hero block
+/*
 .block-hero {
 	margin-bottom: $space;
   
@@ -61,65 +118,6 @@
 		}
 	}
 }
-
-// Thumbnail block
-
-.block-thumb {
-	display: table;
-	width: 100%;
-	border-collapse: collapse;
-
-	.b-inner {
-    display: table-row;
-    vertical-align: top;
-    overflow: hidden;
-	}
-
-	.b-thumb {
-    display: table-cell;
-    vertical-align: top;	
-    width: 25%;
-    max-width: 10em;
-    
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-	}
-
-	.b-text {
-    display: table-cell;
-    width: 75%;
-    padding: 0 0 0 $pad;
-  }
-}
-
-// Thumbnail block with summary
-
-.block-thumb-summary {
-	.b-thumb {
-		width: 50%;
-	}
-
-	.b-text {
-		width: 50%;
-	}
-}
-
-// Inset block
-
-.block-inset {
-	position: relative;
-
-	.b-thumb {
-		position: relative;
-		z-index: 0;
-
-		img {
-			margin-bottom: $space-half;
-		}
-	}
-}
+*/
 
 // End blocks

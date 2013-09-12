@@ -29,19 +29,45 @@ $(document).ready(function (){
     Toggle responsive nav
    ======================================================= */
 
-    /*   
-    $menu = $('.menu'),
-    $menulink = $('#menu-link');
-    
-    $menulink.click(function() {
-        $(this).toggleClass('active');
-        $menu.toggleClass('active');
-        return false;
-    });
-    */
+  $menu = $('.menu'),
+  $menulink = $('#menu-link');
+  
+  $menulink.click(function() {
+    $(this).toggleClass('is-active');
+    $menu.toggleClass('is-active');
+    return false;
+  });
 
 });
 
+/* =======================================================
+    Toggles
+   ======================================================= */
+   
+  $toggles = $('.toggle');
+  $toggletargets = $('.toggle-target');
+  
+  $toggles.on('click', function(event) {
+    
+    event.preventDefault(); // Prevent the default behavior so the page doesn't jump
+    
+    if ($(this).hasClass('is-active')) { // If the clicked toggle is currently active...
+            
+      $(this).removeClass('is-active'); // De-activate the clicked toggle
+      var target = $(this).attr('href'); // Get the target
+      $(target).removeClass('is-active'); // De-activate the target
+    
+    } else { // If the clicked toggle is not currently active...
+      
+      $toggles.removeClass('is-active'); // De-activate all toggles in case another is active
+      $(this).addClass('is-active'); // Activate the clicked toggle
+      $toggletargets.removeClass('is-active'); // De-activate all targets
+      var target = $(this).attr('href'); // Get the new target
+      $(target).addClass('is-active'); // Make the new target active
+      
+    }
+    
+  });
 
 /* optional triggers
 

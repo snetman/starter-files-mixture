@@ -15,7 +15,7 @@
 {% include "head/icons" %}
 </head>
 
-<body>
+<body{% block bodyclass %}{% endblock %}>
   {% include "global-header" %}
   <section id="Content">
       {% block content %}{% endblock %}

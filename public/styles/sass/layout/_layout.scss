@@ -2,10 +2,32 @@
     Layouts
    ======================================================= */
 
-/* Layout Container */
+// Layout container
+
 .lc {
+  position: relative;
+  clear: both;
 	max-width: $grid-max;	
 	margin: 0 auto;
+	padding: {
+  	left: $grid-padding;
+  	right: $grid-padding;
+	}
+	
+	@include breakpoint($bp-med) {
+	  padding: {
+  	  left: $grid-padding*1.5;
+  	  right: $grid-padding*1.5;
+	  }
+	}
+
+	@include breakpoint($bp-large) {
+	  padding: {
+  	  left: $grid-padding*2;
+  	  right: $grid-padding*2;
+	  }
+	}
+
 }
 
 /*  Templates

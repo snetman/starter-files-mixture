@@ -77,6 +77,7 @@ $space-quarter: $space/4;
 $pad: 1.5rem;
 $pad-and-half: $pad*1.5;
 $pad-double: $pad*2;
+$pad-triple: $pad*3;
 $pad-half: $pad/2;
 $pad-quarter:$pad/4;
 
@@ -88,8 +89,8 @@ $pad-quarter:$pad/4;
 $border-color: $gray;
 $border-style: solid;
 $border-width: 1px;
-$border-width-medium: 3px;
-$border-width-large: 7px;
+$border-width-medium: 2px;
+$border-width-large: 4px;
 
 $border-color-form: $border-color;
 $border-style-form: $border-style;
@@ -103,16 +104,16 @@ $border-width-form: $border-width;
 // http://breakpoint-sass.com/
 $breakpoint-to-ems: true;
 
-$bp-small: 24em;
-$bp-small-2: 29.75em;
-$bp-small-3: 39.8em;
-$bp-med: 46.8em;
-$bp-med-2: 48em;
-$bp-large: 50em;
-$bp-large-2: 66em;
-$bp-xl: 73em;
-$bp-xxl: 89em;
-$bp-xxxl: 93em;
+//$bp-small: 24em;
+//$bp-small-2: 29.75em;
+//$bp-small-3: 39.8em;
+$bp-med: 748px; // 46.8em
+//$bp-med-2: 48em;
+$bp-large: 960px; // 60em;
+//$bp-large-2: 66em;
+//$bp-xl: 73em;
+//$bp-xxl: 89em;
+//$bp-xxxl: 93em;
 
 
 /* =======================================================
@@ -121,9 +122,17 @@ $bp-xxxl: 93em;
 
 // Singularity grid
 // https://github.com/Team-Sass/Singularity/wiki
-$grids: 12;
-$gutters: 24/58;
+
+$grids: 4;
+$grids: add-grid(6 at $bp-med);
+$grids: add-grid(12 at $bp-large);
+
+$gutters: .125;
+// $gutters: add-gutter(3/16 at $bp-med);
+
 $output: 'isolation';
 $grid-max: 1100px;
+$grid-padding: 20px;
+
 
 // End variables

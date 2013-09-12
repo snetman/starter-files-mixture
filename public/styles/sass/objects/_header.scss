@@ -18,21 +18,94 @@
 	margin: 0.4rem;
 }
 
-/*  Menu toggle
+/*  Menu
    ======================================================= */
+   
+.menu {
+  margin-top: $space-half;
+  max-height: 0;
+  overflow: hidden;
+  &.is-active {
+    max-height: none;
+  }
+  
+  @include breakpoint($bp-med) {
+    margin-top: $space;
+    max-height: none;
+    display: table;
+    width: 100%;
+  }
+}
 
-.menu-toggle {
-	float: right;
-	display: block;
-	padding: 0.9rem 1rem 0.7rem;
-	font-size: 1.3rem;
-	line-height: 1;
-	border-left: 1px solid #dbdbdb;
+// Menu toggle
 
-	@media all and (min-width: $bp-med) {
+#menu-toggle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: $space-double;
+  
+  a {
+    display: block;
+  }
+  
+  /*
+  .icon {
+    line-height: 1;
+  }
+  */
+
+	@include breakpoint($bp-med) {
 		display: none;
 	}
 }
+
+/*  Main navigation
+   ======================================================= */
+
+.main-nav {
+  li {
+    border-top: $border-color $border-style $border-width;
+    &:first-child {
+      border-top-width: 0;
+    }
+  }
+  a {
+    display: block;
+    padding: $space-half;
+    &:hover {
+      background-color: $blue;
+      color: $white;
+    }
+  }
+  
+  @include breakpoint($bp-med) {
+    position: relative;
+    display: table-row;
+    li {
+      border-top-width: 0;
+      display: table-cell;
+      border-left: $border-width $border-style $border-color;
+      &:first-child {
+        border-left-width: 0;
+      }
+    }
+    a {
+      text-align: center;
+    }
+  }
+}
+
+// You are here stuff
+
+/*
+.bodyclass #nav-id a,
+.bodyclass #nav-id a,
+.bodyclass #nav-id a {
+  background-color: $blue;
+  color: $white;
+}
+*/
 
 /*  Search form
    ======================================================= */
