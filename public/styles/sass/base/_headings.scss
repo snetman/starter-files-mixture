@@ -76,4 +76,15 @@ h6, .zeta{
   line-height: 1.5; // 18
 }
 
+// Heading groups
+
+hgroup {
+  margin-bottom: $space;
+  
+  h1,h2,h3,h4,h5,h6 {
+    margin-bottom: 0;
+    line-height: 1.2;
+  }
+}
+
 // End headings

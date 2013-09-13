@@ -11,33 +11,21 @@
 }
 
 .gi {
-  float: left;
-  margin-bottom: $space-half;
+  width: 100%;
+  margin-bottom: $space-half;  
 }
 
 .gi-bordered {
-  border-top: $border-width dotted $border-color;
+  border-top: $border-width $border-style $border-color;
   padding-top: $space-half;
 }
 
 /*  Quick grids
    ======================================================= */
 
-// 1-up grid
-
-.g-1up {
-  .gi {
-    float: none;
-    width: 100%;
-  }
-}
-
 // 2-up grid
 
 .g-2up {
-  .gi {
-    width: 100%;
-  }
   
   @include breakpoint($bp-med) {
     .gi {
@@ -55,9 +43,6 @@
 // 3-up grid
 
 .g-3up {
-  .gi {
-    width: 100%;
-  }
   
   @include breakpoint($bp-med) {
     .gi {
@@ -75,9 +60,6 @@
 // 1-2 grid
 
 .g-1-2 {
-  .gi {
-    width: 100%;
-  }
   
   @include breakpoint($bp-med) {
     .gi {
@@ -92,13 +74,22 @@
   }
 }
 
+.g-1-2-rev {
+  
+  @include breakpoint($bp-med) {
+    .gi {
+      @include grid-span(4,3);
+    }
+    .gi:nth-child(2n) {
+      @include grid-span(2,1);
+    }
+  }
+}
+
 // 2-1 grid
 
 .g-2-1 {
-  .gi {
-    width: 100%;
-  }
-  
+
   @include breakpoint($bp-med) {
     .gi {
       @include float-span(4);
@@ -115,10 +106,7 @@
 // 1-5 grid
 
 .g-1-5 {
-  .gi {
-    width: 100%;
-  }
-  
+
   @include breakpoint($bp-med) {
     .gi {
       @include float-span(1);
