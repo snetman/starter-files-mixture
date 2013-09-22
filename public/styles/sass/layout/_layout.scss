@@ -16,15 +16,15 @@
 	
 	@include breakpoint($bp-med) {
 	  padding: {
-  	  left: $grid-padding*1.5;
-  	  right: $grid-padding*1.5;
+  	  left: $grid-padding-med;
+  	  right: $grid-padding-med;
 	  }
 	}
 
 	@include breakpoint($bp-large) {
 	  padding: {
-  	  left: $grid-padding*2;
-  	  right: $grid-padding*2;
+  	  left: $grid-padding-large;
+  	  right: $grid-padding-large;
 	  }
 	}
 
@@ -33,9 +33,10 @@
 /*  Templates
    ======================================================= */
 
-/* Two Column Layout */
-.l-two-col {
-	@extend .cf;
+// Two Column Layout
+// Standard two column layout with main and sidebar column
+.l-2col {
+	@include clearfix;
 
 	.l-main {
 	}
