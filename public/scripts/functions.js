@@ -19,11 +19,20 @@ $(document).ready(function (){
     Carousel
    ======================================================= */
 
-	/*
-	$('.carousel').carousel({
-    	interval: false
-    });
-    */
+  $('#Fader').easyFader({
+    autoCycle: false,
+    slideDur: 7000,
+		effectDur: 500
+  });
+  /* For other styles of carousel, these are the init functions */
+  /*
+  $('#Slider').easyFader({
+  	effect: 'slide'
+  });
+  $('#Carousel').easyFader({
+  	effect: 'carousel'
+  });
+  */
 
 /* =======================================================
     Toggle responsive nav
@@ -41,27 +50,27 @@ $(document).ready(function (){
 });
 
 /* =======================================================
-    Toggles
+    Tabs
    ======================================================= */
    
-  $toggles = $('.toggle');
-  $toggletargets = $('.toggle-target');
+  $tabs = $('.tab');
+  $tabtargets = $('.tab-target');
   
-  $toggles.on('click', function(event) {
+  $tabs.on('click', function(event) {
     
     event.preventDefault(); // Prevent the default behavior so the page doesn't jump
     
-    if ($(this).hasClass('is-active')) { // If the clicked toggle is currently active...
+    if ($(this).hasClass('is-active')) { // If the clicked tab is currently active...
             
-      $(this).removeClass('is-active'); // De-activate the clicked toggle
+      $(this).removeClass('is-active'); // De-activate the clicked tab
       var target = $(this).attr('href'); // Get the target
       $(target).removeClass('is-active'); // De-activate the target
     
     } else { // If the clicked toggle is not currently active...
       
-      $toggles.removeClass('is-active'); // De-activate all toggles in case another is active
-      $(this).addClass('is-active'); // Activate the clicked toggle
-      $toggletargets.removeClass('is-active'); // De-activate all targets
+      $tabs.removeClass('is-active'); // De-activate all tabs in case another is active
+      $(this).addClass('is-active'); // Activate the clicked tab
+      $tabtargets.removeClass('is-active'); // De-activate all tab targets
       var target = $(this).attr('href'); // Get the new target
       $(target).addClass('is-active'); // Make the new target active
       
