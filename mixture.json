@@ -1,5 +1,4 @@
 {
-  "customRubyPath": "/Users/snetman/.rvm/rubies/ruby-1.9.3-p286|/Users/snetman/.rvm/gems/ruby-1.9.3-p286",
   "debug": false,
   "domain": null,
   "lintScripts": false,
@@ -17,5 +16,12 @@
   "templateDefaultPage": "index",
   "templateDirectory": "templates",
   "type": "mixture",
-  "useCompass": true
+  "useCompass": true,
+  "ftpSettings": {
+    "host": "someurl.com",
+    "port": 21,
+    "username": "someusr",
+    "password": "somepass",
+    "path": "public_html/someplace/"
+  }
 }
