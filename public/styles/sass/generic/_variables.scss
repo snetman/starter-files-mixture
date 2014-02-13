@@ -19,6 +19,12 @@ $white: #fff;
 $blue: #00f;
 $yellow: rgb(255,230,0);
 
+/*  General type
+   ======================================================= */
+
+$body-color: $gray-dark;
+$headline-color: $black;
+
 /*  Status
    ======================================================= */
 
@@ -40,12 +46,17 @@ $link-color-hover: lighten($link-color,10);
 $link-color-visited: $link-color;
 $link-color-focus: $link-color-hover;
 
-/*  Buttons
+/*  Forms
    ======================================================= */
 
-$btn-border-width: 1px;
-$btn-border-style: solid;
-$btn-border-color: #f00;
+$form-label-color: $headline-color;
+$form-input-color: $body-color;
+$form-input-background-color: $gray-light;
+$form-input-background-color-disabled: $form-input-background-color;
+$form-help-color: $gray;
+
+/*  Buttons
+   ======================================================= */
 
 $btn-background-color: $gray-medium;
 $btn-color: $gray-light-4;
@@ -61,6 +72,7 @@ $btn-success-border-color: $btn-border-color;
 $btn-danger-background-color: #f00;
 $btn-danger-color: $white;
 $btn-danger-border-color: $btn-border-color;
+
 
 
 /*  Overlays
@@ -85,6 +97,9 @@ $font-size-slightly-smaller: 0.875em;
 $font-size-small: 0.75em;
 $font-size-large: 1.5em;
 
+$line-height-base: 1.5;
+$line-height-small: 1.2;
+
 
 /* =======================================================
     Sizes
@@ -106,7 +121,7 @@ $pad-quarter:$pad/4;
 
 
 /* =======================================================
-    Borders
+    Standard Borders
    ======================================================= */
 
 $border-color: $gray;
@@ -115,9 +130,33 @@ $border-width: 1px;
 $border-width-medium: 2px;
 $border-width-large: 4px;
 
-$border-color-form: $border-color;
-$border-style-form: $border-style;
-$border-width-form: $border-width;
+
+
+/* =======================================================
+    Forms
+   ======================================================= */
+
+$form-input-height-base: 36px; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+$form-input-padding: $space-quarter;
+
+$form-border-radius: 5px;
+$form-border-color: $border-color; 
+$form-border-style: $border-style;
+$form-border-width: $border-width;
+
+
+/* =======================================================
+    Buttons
+   ======================================================= */
+
+$btn-padding: $pad-half;
+$btn-padding-small: $pad-quarter;
+$btn-padding-large: $btn-padding;
+
+$btn-border-radius: 5px;
+$btn-border-color: transparent; 
+$btn-border-style: $border-style;
+$btn-border-width: $border-width;
 
 
 /* =======================================================

@@ -8,7 +8,7 @@
 	display: inline-block;
 	border: $btn-border-width $btn-border-style $btn-border-color;
 	margin-bottom: 0;
-	padding: $pad;
+	padding: $btn-padding;
 	font-weight: $font-weight-headline;
 	line-height: 1;
 	text-align: center;
@@ -29,7 +29,7 @@
   &.active {
     outline: 0;
     background-image: none;
-    .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
   }
 
   &.disabled,
@@ -37,8 +37,8 @@
   fieldset[disabled] & {
     cursor: not-allowed;
     pointer-events: none; // Future-proof disabling of clicks
-    opacity(.65);
-    box-shadow(none);
+    opacity: .65;
+    box-shadow: none;
   }
 }
 
@@ -107,20 +107,20 @@
 // Small button
 
 .btn-small {
-	padding: $pad-half;
+	padding: $btn-padding-small;
 }
 
 // Tiny button
 
 .btn-tiny {
-  padding: $pad-half;
+	padding: $btn-padding-small;
   font-size: $font-size-small;
 }
 
 // Large button
 
 .btn-large {
-	padding: $pad-half;
+  padding: $btn-padding-large;
 	font-size: $font-size-large;
 }
 
