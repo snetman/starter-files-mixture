@@ -8,11 +8,23 @@
 	overflow: hidden;
 	clear: both;
 	@include clearfix;
+	margin: 0;
+	padding: 0;
 }
 
 .gi {
   width: 100%;
-  margin-bottom: $space-half;  
+  margin: 0;
+  margin-bottom: $space;  
+  padding: 0;
+}
+
+.gi-compact {
+  margin-bottom: $space-half;
+}
+
+.gi-flush {
+  margin-bottom: 0;
 }
 
 .gi-bordered {
@@ -23,21 +35,27 @@
 /*  Quick grids
    ======================================================= */
 
+
+
 // 2-up grid
 
 .g-2up {
   
   @include breakpoint($bp-med) {
     .gi {
-      @include float-span(3);
+      float: left;
+      width: 48%;
+      margin-right: 3%;
     }
     .gi:nth-child(2n) {
-      @include float-span(3,'last');
+      float: right;
+      margin-right: 0;
     }
     .gi:nth-child(2n+1) {
-      @include float-span(3,'first');
+      clear: both;
     }
   }
+  
 }
 
 // 3-up grid
@@ -46,76 +64,38 @@
   
   @include breakpoint($bp-med) {
     .gi {
-      @include float-span(2);
+      float: left;
+      width: 31%;
+      margin-right: 3.5%;
     }
     .gi:nth-child(3n) {
-      @include float-span(2,'last');
+      float: right;
+      margin-right: 0;
     }
     .gi:nth-child(3n+1) {
-      @include float-span(2,'first');
+      clear: both;
     }
   }
-}
-
-// 1-2 grid
-
-.g-1-2 {
   
-  @include breakpoint($bp-med) {
-    .gi {
-      @include float-span(2);
-    }
-    .gi:nth-child(2n) {
-      @include float-span(4,'last');
-    }
-    .gi:nth-child(2n+1) {
-      @include float-span(2,'first');
-    }
-  }
 }
 
-.g-1-2-rev {
+// 4-up grid
+
+.g-4up {
+
+  @include breakpoint($bp-med) {
+    .gi {
+      float: left;
+      width: 23%;
+      margin-right: 2.5%;
+    }
+    .gi:nth-child(4n) {
+      float: right;
+      margin-right: 0;
+    }
+    .gi:nth-child(4n+1) {
+      clear: both;
+    }
+  }
   
-  @include breakpoint($bp-med) {
-    .gi {
-      @include grid-span(4,3);
-    }
-    .gi:nth-child(2n) {
-      @include grid-span(2,1);
-    }
-  }
-}
-
-// 2-1 grid
-
-.g-2-1 {
-
-  @include breakpoint($bp-med) {
-    .gi {
-      @include float-span(4);
-    }
-    .gi:nth-child(2n) {
-      @include float-span(2,'last');
-    }
-    .gi:nth-child(2n+1) {
-      @include float-span(4,'first');
-    }
-  }
-}
-
-// 1-5 grid
-
-.g-1-5 {
-
-  @include breakpoint($bp-med) {
-    .gi {
-      @include float-span(1);
-    }
-    .gi:nth-child(2n) {
-      @include float-span(5,'last');
-    }
-    .gi:nth-child(2n+1) {
-      @include float-span(1,'first');
-    }
-  }
 }

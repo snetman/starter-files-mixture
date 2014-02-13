@@ -9,11 +9,8 @@
   clear: both;
 	max-width: $grid-max;	
 	margin: 0 auto;
-	padding: {
-  	left: $grid-padding;
-  	right: $grid-padding;
-	}
-	
+	padding: 0 $grid-padding;
+		
 	@include breakpoint($bp-med) {
 	  padding: {
   	  left: $grid-padding-med;

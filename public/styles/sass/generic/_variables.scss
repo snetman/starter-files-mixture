@@ -40,6 +40,29 @@ $link-color-hover: lighten($link-color,10);
 $link-color-visited: $link-color;
 $link-color-focus: $link-color-hover;
 
+/*  Buttons
+   ======================================================= */
+
+$btn-border-width: 1px;
+$btn-border-style: solid;
+$btn-border-color: #f00;
+
+$btn-background-color: $gray-medium;
+$btn-color: $gray-light-4;
+
+$btn-primary-background-color: $gray-dark;
+$btn-primary-color: $btn-color;
+$btn-primary-border-color: $btn-border-color;
+
+$btn-success-background-color: #0f0;
+$btn-success-color: $white;
+$btn-success-border-color: $btn-border-color;
+
+$btn-danger-background-color: #f00;
+$btn-danger-color: $white;
+$btn-danger-border-color: $btn-border-color;
+
+
 /*  Overlays
    ======================================================= */
 
