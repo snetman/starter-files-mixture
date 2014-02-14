@@ -3,6 +3,8 @@
   "domain": null,
   "lintScripts": false,
   "modelSource": null,
+  "optimiseImages": true,
+  "optimiseSVG": true,
   "preprocessorLocations": "public",
   "preprocessorScriptOutput": "public/scripts",
   "preprocessorStyleOutput": "public/styles",
