@@ -2,10 +2,15 @@
     Lists
    ======================================================= */
 
+/* TODO: Review these make sure they don't suck and are redundant to nav */
+
+/* TODO: Check out Cornerstone's lists for things like link lists with counts */
+
 .inline-list {
 	li {
 		display: inline-block;
 	}
+	/* TODO: remove bullets from this list and default padding that I put back in */
 }
 
 // social list
