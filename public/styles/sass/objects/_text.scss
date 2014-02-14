@@ -20,40 +20,9 @@
 
 .text {
 
-  p {
-    max-width: 46em;
-  }
-
 	a {
 		text-decoration: underline;
 	}
-
-  ul {
-  	list-style: disc;
-  	margin: 0 0 $space 1.2em;
-  
-  	ul {
-  		margin-bottom: 0;
-  	}
-  }
-
-  ol {
-    list-style: decimal;
-  	margin: 0 0 $space 1em;
-  	
-  	ol {
-    	margin-bottom: 0;
-      li {
-        list-style-type: upper-alpha; // A. , B. , C.
-        li {
-          list-style-type: lower-roman; // i. , ii. , iii.
-          li {
-            list-style-type: lower-alpha; // a. , b. , c.
-          }
-        }
-      }
-  	}
-  }
   
   table {
     margin-bottom: $space;

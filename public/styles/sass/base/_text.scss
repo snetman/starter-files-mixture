@@ -3,10 +3,11 @@
    ======================================================= */
 
 p {
+	margin-bottom: $space;
+  max-width: 38em;
   font-size: 16px;
   font-size: 1rem; // 16
-  line-height: 1.5; // 24
-	margin-bottom: $space;
+  line-height: $line-height-base;
 }
 
 // Blockquote
