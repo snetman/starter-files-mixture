@@ -141,11 +141,12 @@ output {
     background-color: $form-input-background-color-disabled;
     opacity: 1; // iOS fix for unreadable disabled content
   }
+}
 
-  // Reset height for `textarea`s
-  textarea& {
-    height: auto;
-  }
+// Reset height for textarea
+
+textarea.form-control {
+  height: auto;
 }
 
 /*  Search inputs in iOS
@@ -250,14 +251,14 @@ input[type="checkbox"],
 // Build on `.form-control` with modifier classes to decrease or increase the
 // height and font-size of form controls.
 
-.input-sm {
+.input-small {
   height: auto;
   padding: $form-input-padding;
   font-size: $font-size-small;
   line-height: $line-height-small;
 }
 
-.input-lg {
+.input-large {
   height: auto;
   padding: $form-input-padding;
   font-size: $font-size-large;
@@ -276,7 +277,7 @@ input[type="checkbox"],
 
   // Ensure icons don't overlap text
   .form-control {
-    padding-right: $form-input-height-base * 1.25);
+    padding-right: $form-input-height-base * 1.25;
   }
 
   // Feedback icon (requires .glyphicon classes)
@@ -324,6 +325,7 @@ input[type="checkbox"],
   display: block; // account for any element using help-block
   margin-top: $space-quarter;
   margin-bottom: $space-half;
+  font-size: $font-size-small;
   color: $form-help-color;
 }
 
@@ -345,9 +347,19 @@ input[type="checkbox"],
     .form-group {
       display: inline-block;
       margin-bottom: 0;
+      padding: {
+        left: $space-quarter;
+        right: $space-half;
+      }
       vertical-align: middle;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
     }
-
+    
     // In navbar-form, allow folks to *not* use `.form-group`
     .form-control {
       display: inline-block;

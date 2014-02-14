@@ -46,34 +46,6 @@ $link-color-hover: lighten($link-color,10);
 $link-color-visited: $link-color;
 $link-color-focus: $link-color-hover;
 
-/*  Forms
-   ======================================================= */
-
-$form-label-color: $headline-color;
-$form-input-color: $body-color;
-$form-input-background-color: $gray-light;
-$form-input-background-color-disabled: $form-input-background-color;
-$form-help-color: $gray;
-
-/*  Buttons
-   ======================================================= */
-
-$btn-background-color: $gray-medium;
-$btn-color: $gray-light-4;
-
-$btn-primary-background-color: $gray-dark;
-$btn-primary-color: $btn-color;
-$btn-primary-border-color: $btn-border-color;
-
-$btn-success-background-color: #0f0;
-$btn-success-color: $white;
-$btn-success-border-color: $btn-border-color;
-
-$btn-danger-background-color: #f00;
-$btn-danger-color: $white;
-$btn-danger-border-color: $btn-border-color;
-
-
 
 /*  Overlays
    ======================================================= */
@@ -131,7 +103,6 @@ $border-width-medium: 2px;
 $border-width-large: 4px;
 
 
-
 /* =======================================================
     Forms
    ======================================================= */
@@ -144,6 +115,14 @@ $form-border-color: $border-color;
 $form-border-style: $border-style;
 $form-border-width: $border-width;
 
+// Colors
+
+$form-label-color: $headline-color;
+$form-input-color: $body-color;
+$form-input-background-color: $gray-light;
+$form-input-background-color-disabled: $form-input-background-color;
+$form-help-color: $gray;
+
 
 /* =======================================================
     Buttons
@@ -154,9 +133,45 @@ $btn-padding-small: $pad-quarter;
 $btn-padding-large: $btn-padding;
 
 $btn-border-radius: 5px;
-$btn-border-color: transparent; 
 $btn-border-style: $border-style;
 $btn-border-width: $border-width;
+
+// Colors
+
+$btn-background-color: $gray-medium;
+$btn-background-color-hover: lighten($btn-background-color, 10);
+$btn-border-color: transparent;
+$btn-border-color-hover: $btn-border-color;
+$btn-color: $gray-light-4;
+$btn-color-hover: $btn-color;
+
+$btn-primary-background-color: $gray-dark;
+$btn-primary-background-color-hover: lighten($btn-primary-background-color, 10);
+$btn-primary-color: $btn-color;
+$btn-primary-color-hover: $btn-color;
+$btn-primary-border-color: $btn-border-color;
+$btn-primary-border-color-hover: $btn-primary-border-color;
+
+$btn-success-background-color: #0f0;
+$btn-success-background-color-hover: lighten($btn-success-background-color, 20);
+$btn-success-color: $white;
+$btn-success-color-hover: $btn-success-color;
+$btn-success-border-color: $btn-border-color;
+$btn-success-border-color-hover: $btn-success-border-color;
+
+$btn-danger-background-color: #f00;
+$btn-danger-background-color-hover: lighten($btn-danger-background-color, 20);
+$btn-danger-color: $white;
+$btn-danger-color-hover: $btn-danger-color;
+$btn-danger-border-color: $btn-border-color;
+$btn-danger-border-color-hover: $btn-danger-border-color;
+
+$btn-link-background-color: transparent;
+$btn-link-background-color-hover: $btn-link-background-color;
+$btn-link-color: $link-color;
+$btn-link-color-hover: $link-color-hover;
+$btn-link-border-color: transparent;
+$btn-link-border-color-hover: $btn-link-border-color;
 
 
 /* =======================================================

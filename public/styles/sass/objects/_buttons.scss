@@ -20,8 +20,9 @@
   	
 	&:hover,
 	&:focus {
-		background-color: $white;
-		color: $gray-dark;
+		background-color: $btn-background-color-hover;
+		border-color: $btn-border-color-hover;
+		color: $btn-color-hover;
 		text-decoration: none;
 	}
 
@@ -48,24 +49,36 @@
   background-color: $btn-primary-background-color;
   border-color: $btn-primary-border-color;
   color: $btn-primary-color;
+  &:hover,
+  &:focus {
+    background-color: $btn-primary-background-color-hover;
+    border-color: $btn-primary-border-color-hover;
+    color: $btn-primary-color-hover;
+  }
 }
 
 .btn-success {
   background-color: $btn-success-background-color;
   border-color: $btn-success-border-color;
   color: $btn-success-color;
+  &:hover,
+  &:focus {
+    background-color: $btn-success-background-color-hover;
+    border-color: $btn-success-border-color-hover;
+    color: $btn-success-color-hover;
+  }
 }
 
 .btn-danger {
   background-color: $btn-danger-background-color;
   border-color: $btn-danger-border-color;
   color: $btn-danger-color;
-}
-
-.btn-link {
-  background-color: $btn-primary-background-color;
-  border-color: $btn-primary-border-color;
-  color: $btn-primary-color;
+  &:hover,
+  &:focus {
+    background-color: $btn-danger-background-color-hover;
+    border-color: $btn-danger-border-color-hover;
+    color: $btn-danger-color-hover;
+  }
 }
 
 
@@ -73,24 +86,26 @@
    ======================================================= */
 
 .btn-link {
-  color: link-color;
+  border-radius: 0;
   font-weight: normal;
   cursor: pointer;
-  border-radius: 0;
+  background-color: $btn-link-background-color;
+  border-color: $btn-link-border-color;
+  color: $btn-link-color;
 
   &:active {
     background-color: transparent;
-    .box-shadow(none);
+    box-shadow: none;
   }
   &:hover,
   &:focus,
   &:active {
-    border-color: transparent;
+    border-color: $btn-link-border-color-hover;
   }
   &:hover,
   &:focus {
-    color: $link-color-hover;
-    background-color: transparent;
+    color: $btn-link-color-hover;
+    background-color: $btn-link-background-color-hover;
   }
 }
 
