@@ -24,23 +24,39 @@
   color: transparent;
 }
 
-// EM calculator
-// http://viljamis.com/blog/2013/prototyping-responsive-typography
+// Hide from both screenreaders and browsers: h5bp.com/u
+@mixin hidden {
+    display: none !important;
+    visibility: hidden;
+}
 
-$browser-context: 16; // Default
-@function em($pixels, $context: $browser-context) {
-  @return #{$pixels/$context}em
+// Hide only visually, but have it available for screenreaders: h5bp.com/v
+@mixin visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+// Pixels to ems
+
+@function pem($px, $base: 16) {
+    @return ($px / $base) + em;
 }
 
 // CSS Transition
 // Usage: @include transition(width,0.3s,ease-out);
 
-@mixin transition($transition-property, $transition-time, $method) {
-	-webkit-transition: $transition-property $transition-time $method;
-	-moz-transition: $transition-property $transition-time $method;
-	-ms-transition: $transition-property $transition-time $method;
-	-o-transition: $transition-property $transition-time $method;
-	transition: $transition-property $transition-time $method;
+@mixin transition($transition-property, $transition-time, $method, $transition-delay: 0s) {
+	-webkit-transition: $transition-property $transition-time $method $transition-delay;
+	-moz-transition: $transition-property $transition-time $method $transition-delay;
+	-ms-transition: $transition-property $transition-time $method $transition-delay;
+	-o-transition: $transition-property $transition-time $method $transition-delay;
+	transition: $transition-property $transition-time $method $transition-delay;
 }
 
 // Rem Unit font sizes with relative fallback http:/seesparkbox.com/foundry/scss_rem_mixin_now_with_a_better_fallback  

@@ -16,12 +16,25 @@
 </head>
 
 <body{% block bodyclass %}{% endblock %}>
+
+<div id="outer-wrap">
+<div id="inner-wrap">
+
   {% include "global-header" %}
+  {% include "navigation" %}
+
   <section id="Content">
-      {% block content %}{% endblock %}
+    {% block content %}{% endblock %}
   </section>
+  
   {% include "global-footer" %}
   {% include "foot/scripts" %}
+  
+</div>
+<!--/#inner-wrap-->
+</div>
+<!--/#outer-wrap-->
+
 </body>
 
 </html>

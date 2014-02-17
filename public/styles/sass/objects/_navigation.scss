@@ -1,0 +1,246 @@
+/* =======================================================
+    Main navigation
+   ======================================================= */
+
+/*
+.main-nav {
+  li {
+    border-top: $border-color $border-style $border-width;
+    &:first-child {
+      border-top-width: 0;
+    }
+  }
+  a {
+    display: block;
+    padding: $space-half;
+    &:hover {
+      background-color: $blue;
+      color: $white;
+    }
+  }
+  
+  @include breakpoint($bp-med) {
+    position: relative;
+    display: table-row;
+    li {
+      border-top-width: 0;
+      display: table-cell;
+      border-left: $border-width $border-style $border-color;
+      &:first-child {
+        border-left-width: 0;
+      }
+    }
+    a {
+      text-align: center;
+    }
+  }
+}
+
+*/
+
+// Off-canvas navigation
+
+$nav-off-canvas-width: 70%;
+
+#nav {
+  position: absolute;
+  top: 0;
+  padding-top: pem(84);
+  
+  // .no-js on step 2?
+  
+  &:not(:target) {
+    z-index: 1;
+    height: 0;
+  }
+  
+  &:target {
+    .close-btn {
+      display: block;
+    }
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: pem(-60);
+    left: pem(30);
+  }
+  
+  .block {
+    position: relative;
+    padding: 0;
+  }
+  
+  li {
+    position: relative; 
+    border-top: 1px solid rgba(255,255,255, 0.1);
+
+    &:last-child {
+      border-bottom: 1px solid rgba(255,255,255, 0.1);
+    }
+
+    &.is-active:after {
+      z-index: 50;
+      display: block;
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: pem(-0.5);
+      margin-top: pem(-10);
+      border-top: pem(10) transparent solid;
+      border-bottom: pem(10) transparent solid;
+      border-right: pem(10) #fff solid;
+    }
+
+    a {
+      padding: pem(12, 14) pem(30, 14);
+    }
+  }
+}
+
+/*
+
+Desktop widths
+
+#nav {
+    z-index: 200;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    color: #fff;
+
+    .close-btn {
+        display: none;
+    }
+
+    .block-title {
+        @include visuallyhidden;
+    }
+
+    .block {
+        z-index: 2;
+        position: relative;
+        padding: pem(12) pem(20);
+        background: $background-color;
+    }
+
+    ul {
+        @include clearfix;
+        display: block;
+    }
+
+    li {
+        display: block;
+
+        a {
+            display: block;
+            color: #ccc;
+            font-size: pem(14);
+            line-height: pem(18, 14);
+            font-weight: bold;
+            outline: none;
+
+            &:focus,
+            &:hover {
+                color: #fff;
+                background: rgba(255,255,255, 0.1);
+            }
+        }
+
+        &.is-active {
+            a {
+                color: #fff;
+            }
+        }
+    }
+}
+*/
+
+// Desktop nav stuff
+
+/*
+#nav {
+
+    .close-btn {
+        @include visuallyhidden;
+    }
+
+    .block-title {
+        @include visuallyhidden;
+    }
+
+    ul {
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    li {
+        display: inline-block;
+        border-right: 1px solid rgba(255,255,255, 0.1);
+
+        &:last-child {
+            border-right: none;
+        }
+
+        a {
+            padding: pem(6, 14) pem(12, 14);
+        }
+    }
+}
+*/
+
+// You are here stuff
+
+/*
+.bodyclass #nav-id a,
+.bodyclass #nav-id a,
+.bodyclass #nav-id a {
+  background-color: $blue;
+  color: $white;
+}
+*/
+
+/*  Close button and nav button
+   ======================================================= */
+
+.close-btn {
+    display: block;
+    width: pem(42);
+    height: pem(36);
+    padding: 0;
+    border: 0;
+    outline: none;
+    background: $background-color url("../images/close-btn.svg") left center no-repeat;
+    background-size: pem(30) pem(30);
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 100%;
+    @include opacity(1);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    &:focus,
+    &:hover {
+        @include opacity(1);
+    }
+}
+
+.nav-btn {
+    display: block;
+    width: pem(42);
+    height: pem(36);
+    padding: 0;
+    border: 0;
+    outline: none;
+    background: $background-color url("../images/nav-icon.svg") left center no-repeat;
+    background-size: pem(30) pem(24);
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 100%;
+    @include opacity(0.7);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    &:hover,
+    &:focus {
+        @include opacity(1);
+    }
+}

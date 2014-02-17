@@ -24,8 +24,21 @@
   	  right: $grid-padding-large;
 	  }
 	}
-
 }
+
+// Main containers
+
+#outer-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+#inner-wrap {
+  position: relative;
+  width: 100%;
+}
+
 
 /*  Templates
    ======================================================= */
