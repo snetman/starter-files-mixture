@@ -19,11 +19,13 @@ $(document).ready(function (){
     Carousel
    ======================================================= */
 
+  /*
   $('#Fader').easyFader({
     autoCycle: false,
     slideDur: 7000,
 		effectDur: 500
   });
+  */
   /* For other styles of carousel, these are the init functions */
   /*
   $('#Slider').easyFader({
@@ -37,7 +39,7 @@ $(document).ready(function (){
 /* =======================================================
     Toggle responsive nav
    ======================================================= */
-
+/*
   $menu = $('.menu'),
   $menulink = $('#menu-link');
   
@@ -46,13 +48,32 @@ $(document).ready(function (){
     $menu.toggleClass('is-active');
     return false;
   });
-
+*/
+  // Define functions
+  $closeNav = function () {
+    $('body').removeClass('js-nav-open');
+    return false;
+  };
+  $openNav = function () {
+    $('body').addClass('js-nav-open');
+    return false;
+  };
+  
+  // Handle clicks on the "open nav" button 
+  $('#nav-open-btn').on('click', $openNav);
+  
+  // Close the nav when I click on the close button
+  $('#nav-close-btn').on('click', $closeNav);
+  
+  // Close the nav when I click on the nav area outside the links
+  $('#nav').on('click', $closeNav);
+  
 });
 
 /* =======================================================
     Tabs
    ======================================================= */
-   
+  /*
   $tabs = $('.tab');
   $tabtargets = $('.tab-target');
   
@@ -77,6 +98,7 @@ $(document).ready(function (){
     }
     
   });
+  */
 
 /* optional triggers
 

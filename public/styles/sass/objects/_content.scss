@@ -1,11 +1,10 @@
 /* =======================================================
-    Main content area
+    Site content
    ======================================================= */
 
-[role=main] {
+#content {
+  @include clearfix;
 	padding-top: $pad;
 	padding-bottom: $pad;
 	overflow: hidden;
-	@extend .lc;
-	@extend .cf;
 }

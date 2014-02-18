@@ -16,6 +16,11 @@
   }
 }
 
+@mixin zero {
+  margin: 0;
+  padding: 0;
+}
+
 // Hide text for text replacement
 
 @mixin hide-text {

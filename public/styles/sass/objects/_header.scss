@@ -2,52 +2,25 @@
     Site header
    ======================================================= */
 
-/*
 .site-header {
-	background: $white;
-	padding: 0;
-	border-bottom: $border-width $border-style $border-color;
-	@extend .lc;
+  z-index: 100;
+  position: relative;
+  
+  padding: $space-half 0;
+  
+  text-align: center;
+  background: $gray-dark;
+  color: #fff;  
 }
-*/
 
 /*  Logo
    ======================================================= */
 
 .logo {
-	float: left;
-	max-width: 8rem;
-	margin: 0.4rem;
-}
-
-// Banner
-
-#top {
-    z-index: 100;
-    position: relative;
-    color: #fff;
-    background: $background-color;
-
-    .block-title {
-        margin: 0;
-        font-size: pem(30);
-        line-height: pem(36, 30);
-        text-align: center;
-        white-space: nowrap;
-    }
-
-    .nav-btn {
-        position: absolute;
-        top: pem(24);
-        left: pem(30);
-    }
-}
-
-// Desktop width top stuff
-
-#top {
-
-    .nav-btn {
-        @include visuallyhidden;
-    }
+	display: inline-block;
+	margin: 0 auto;
+	color: $white;
+	> a {
+  	color: $white;
+	}
 }

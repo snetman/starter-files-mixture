@@ -5,8 +5,10 @@
 .site-footer {
 	clear: both;
 	overflow: hidden;
-	background: $gray-dark;
-	color: $white;
+  padding: $space-half 0;
+	background: $gray-light-4;
+	color: $body-color;
+
 
 	a {
 		color: $gray-light;
