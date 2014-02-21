@@ -16,3 +16,10 @@ xcuserdata
 # svn & cvs
 .svn
 CVS
+
+# Mixture.app specific stuff
+client-builds/*
+converted-html/*
+
+# Sublime stuff
+*.sublime-workspace

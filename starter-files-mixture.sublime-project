@@ -1,0 +1,10 @@
+{
+    "folders":
+    [
+        {
+            "path": "/Users/snetman/Sites/pure-relevance",
+            "file_exclude_patterns": ["apple-touch*", "*.ico", "package.png", "windows-8-tile*", "*.sublime-*"],
+            "folder_exclude_patterns": ["client-builds", "converted-html"]
+        }
+    ]
+}
