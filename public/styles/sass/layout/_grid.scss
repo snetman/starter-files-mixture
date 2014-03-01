@@ -5,18 +5,25 @@
 // Grid containers
 
 .g {
-	overflow: hidden;
-	clear: both;
-	@include clearfix;
-	margin: 0;
-	padding: 0;
+  clear: both;
+  @include clearfix;
+  @include zero;
+  > li,
+  > div {
+    @include zero;
+    margin-bottom: $space;
+  }
+  > li {
+    list-style: none;
+  }
 }
+
+/* TODO: Add grid heder and grid footer things */
 
 .gi {
   width: 100%;
-  margin: 0;
-  margin-bottom: $space;  
-  padding: 0;
+  @include zero;
+  margin-bottom: $space;
 }
 
 .gi-compact {
@@ -32,15 +39,12 @@
   padding-top: $space-half;
 }
 
-/*  Quick grids
-   ======================================================= */
-
-
-
-// 2-up grid
+//
+//  2-up grid
+//
 
 .g-2up {
-  
+
   @include breakpoint($bp-med) {
     .gi {
       float: left;
@@ -55,13 +59,15 @@
       clear: both;
     }
   }
-  
+
 }
 
-// 3-up grid
+//
+//  3-up grid
+//
 
 .g-3up {
-  
+
   @include breakpoint($bp-med) {
     .gi {
       float: left;
@@ -76,10 +82,12 @@
       clear: both;
     }
   }
-  
+
 }
 
-// 4-up grid
+//
+//  4-up grid
+//
 
 .g-4up {
 
@@ -97,5 +105,5 @@
       clear: both;
     }
   }
-  
+
 }
