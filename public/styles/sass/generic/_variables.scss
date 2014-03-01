@@ -16,7 +16,7 @@ $gray-light-3: #ddd;
 $gray-light-4: #ccc;
 $white: #fff;
 
-$blue: #00f;
+$blue: rgb(0,122,255);
 $yellow: rgb(255,230,0);
 
 /*  General type
@@ -29,7 +29,8 @@ $headline-color: $black;
    ======================================================= */
 
 $error: #f00;
-$valid: #089e00;
+$success: #5ddd00;
+$danger: #f30;
 
 /*  Brand
    ======================================================= */
@@ -96,7 +97,7 @@ $pad-quarter:$pad/4;
     Standard Borders
    ======================================================= */
 
-$border-color: $gray;
+$border-color: $gray-light-4;
 $border-style: solid;
 $border-width: 1px;
 $border-width-medium: 2px;
@@ -111,7 +112,7 @@ $form-input-height-base: 36px; // Make inputs at least the height of their butto
 $form-input-padding: $space-quarter;
 
 $form-border-radius: 5px;
-$form-border-color: $border-color; 
+$form-border-color: $border-color;
 $form-border-style: $border-style;
 $form-border-width: $border-width;
 

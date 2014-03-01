@@ -18,7 +18,7 @@ xcuserdata
 CVS
 
 # Mixture.app specific stuff
-client-builds/*
+# client-builds/*
 converted-html/*
 
 # Sublime stuff

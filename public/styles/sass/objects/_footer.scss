@@ -3,38 +3,18 @@
    ======================================================= */
 
 .site-footer {
-	clear: both;
-	overflow: hidden;
-  padding: $space-half 0;
-	background: $gray-light-4;
+	margin-top: $space-quad;
+	padding: $space;
+	background: $gray-light-3;
 	color: $body-color;
-
+	font-size: $font-size-small;
 
 	a {
-		color: $gray-light;
-	}
-	
-}
-
-//Footer Nav
-
-.nav-footer {
-	li {
-		border-bottom: 1px solid $gray-dark;
-
-		@include breakpoint($bp-med) {
-			border: 0;
-			float: left;
+		color: $body-color;
+		text-decoration: none;
+		&:hover,
+		&:active {
+			text-decoration: underline;
 		}
 	}
-	a {
-		display: block;
-		padding: $pad;
-	}
-}
-
-// Copyright
-
-.copyright {
-  font-size: $font-size-small;
 }

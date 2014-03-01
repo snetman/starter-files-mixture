@@ -1,0 +1,21 @@
+<!doctype html>
+
+{% include "hub/head/conditional" %}
+
+<head>
+<title>{% block title %}This is the default template{% endblock %}</title>
+{% include "hub/head/meta" %}
+{% include "hub/head/css" %}
+{% include "hub/head/scripts" %}
+</head>
+
+<body{% block bodyclass %}{% endblock %}>
+  {% include "hub/global-header" %}
+  <section id="Content">
+      {% block content %}{% endblock %}
+  </section>
+  {% include "hub/global-footer" %}
+  {% include "hub/foot/scripts" %}
+</body>
+
+</html>

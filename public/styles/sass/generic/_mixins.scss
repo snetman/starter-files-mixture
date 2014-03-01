@@ -24,7 +24,7 @@
 // Hide text for text replacement
 
 @mixin hide-text {
-  font: 0/0 a; 
+  font: 0/0 a;
   text-shadow: none;
   color: transparent;
 }
@@ -64,7 +64,7 @@
 	transition: $transition-property $transition-time $method $transition-delay;
 }
 
-// Rem Unit font sizes with relative fallback http:/seesparkbox.com/foundry/scss_rem_mixin_now_with_a_better_fallback  
+// Rem Unit font sizes with relative fallback http:/seesparkbox.com/foundry/scss_rem_mixin_now_with_a_better_fallback
 // Usage: @include font-size(1, large);
 
 @mixin font-size( $decimal-size, $keyword: null ) {
@@ -73,6 +73,40 @@
   font-size: $decimal-size * 1rem;
 }
 
-/* =======================================================
-    Custom mixins
-   ======================================================= */
+//
+//  Flexbox
+//
+// See: http://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+// The order of properties for values is flex-grow: 0 flex-shrink: 1 flex-basis: auto
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin align-items($value) {
+  -webkit-box-align-items: $value;
+  -moz-box-align-items: $value;
+  -webkit-align-items: $value;
+  -ms-align-items: $value;
+  flex: $value;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}

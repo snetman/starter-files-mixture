@@ -2,6 +2,13 @@
     Forms
    ======================================================= */
 
+//
+//  Base styles
+//
+
+form {
+  margin-bottom: $space;
+}
 
 /*  Normalize non-controls
    ======================================================= */
@@ -44,9 +51,9 @@ label {
 
 // Override content-box in Normalize (* isn't specific enough)
 input[type="search"] {
-	-moz-box-sizing: border-box; 
-	-webkit-box-sizing: border-box; 
-	box-sizing: border-box; 
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 // Position radios and checkboxes better
@@ -265,6 +272,12 @@ input[type="checkbox"],
   line-height: $line-height-base;
 }
 
+// For inputs you want to explicitly size in html
+
+.input-sized {
+  width: auto;
+}
+
 
 /*  Form control feedback states
    ======================================================= */
@@ -297,7 +310,7 @@ input[type="checkbox"],
 
 // Feedback states
 .has-success {
-  border-color: $valid; 
+  border-color: $success;
 }
 .has-error {
   border-color: $error;
@@ -311,6 +324,7 @@ input[type="checkbox"],
 // a horizontal form layout.
 
 .form-control-static {
+  margin-top: 0;
   margin-bottom: 0; // Remove default margin from `p`
 }
 
@@ -322,9 +336,9 @@ input[type="checkbox"],
 // below a form control. Use for general help, formatting, or instructional text.
 
 .help-block {
+  clear: both;
   display: block; // account for any element using help-block
-  margin-top: $space-quarter;
-  margin-bottom: $space-half;
+  margin: 0;
   font-size: $font-size-small;
   color: $form-help-color;
 }
@@ -342,7 +356,7 @@ input[type="checkbox"],
 
 .form-inline {
 
-  @include breakpoint($bp-med) {  
+  @include breakpoint($bp-med) {
     // Inline-block all the things for "inline"
     .form-group {
       display: inline-block;
@@ -359,7 +373,7 @@ input[type="checkbox"],
         padding-right: 0;
       }
     }
-    
+
     // In navbar-form, allow folks to *not* use `.form-group`
     .form-control {
       display: inline-block;
@@ -401,7 +415,26 @@ input[type="checkbox"],
       top: 0;
     }
   }
-  
+
+}
+
+
+//
+//  Select group
+//
+
+.select-group {
+  @include clearfix;
+
+  > .form-control {
+    float: right;
+    width: 65%;
+  }
+
+  > select.form-control {
+    float: left;
+    max-width: 33%;
+  }
 }
 
 
@@ -459,156 +492,4 @@ input[type="checkbox"],
     right: (@grid-gutter-width / 2);
   }
 }
-*/
-
-
-/* =======================================================
-    Original form styles
-   ======================================================= */
-
-/*
-form > div {
-	margin-bottom: $space;
-}
-
-form ol, form ul {
-	list-style: none;
-	margin-left: 0;
-}
-
-form li {
-  margin-bottom: $space-quarter;
-}
-
-fieldset {
-	border: 0;
-	padding: 0;
-	margin: 0;
-}
-
-label {
-	display: block;
-	padding-bottom: $space-quarter;
-}
-
-button, input, select, textarea {
-  font-family: inherit;
-  font-size: 100%;
-  margin: 0;
-}
-
-input, textarea {
-	width: 100%;
-	border: $border-width-form $border-style-form $border-color-form;
-	padding: $pad-half 0.65rem;
-}
-
-input[type=text], input[type=search], input[type=url], input[type=number], textarea {
-	-webkit-appearance: none;
-}
-
-button, input[type="submit"] {
-	padding: $pad-half;
-	background: $gray-dark;
-	border: $border-width-form $border-style-form $border-color-form;
-	cursor: pointer;
-	text-transform: uppercase;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-  width: auto;
-  margin-right: 0.3em;
-}
-
-input[type="search"] {
-  -webkit-appearance: none;
-  border-radius: 0;
-}
-
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-//Form Field Container
-
-.field-container {
-	margin-bottom: $space;
-}
-
-// Inline form
-
-.inline-form {
-	
-	fieldset, .inline-container {
-		position: relative;
-	}
-	
-	input[type=submit], button, .btn {
-		font-size: $font-size-slightly-smaller;
-		padding: 0.65rem 1.3rem;
-		background: $gray-dark;
-		position: absolute;
-		top: 0;
-		right: 0;
-		z-index: 1;
-		width: auto;
-
-		&:hover, &:focus {
-			background: $gray;
-			color: $white;
-		}
-	}
-}
-
-// PK to clean this up
-.inline-search-results-form {
-	width: 100%;
-	@media all and (min-width: $bp-med) {
-		width: 82%;
-
-	} 
-	
-	fieldset, .inline-container {
-		position: relative;
-	}
-	
-	input[type=submit], button {
-		position: absolute;
-		top: 0;
-		right: 0;
-		z-index: 1;
-		width: auto;
-	}
-}
-
-// Validation 
-.has-error {
-	border-color: $error;
-}
-.is-valid {
-	border-color: $valid;
-}
-
-*/
-
-/*  Specific forms
-   ======================================================= */
-
-// Search form
-
-/*
-.search-field {
-	padding-right: 3em;
-}
-
-.inline-form .search-submit {
-	background: none;
-	padding: 0.78em 1em;
-	border: 0;
-	border-left: 1px solid $gray-light-3;
-	color: $gray;
-}
-
 */

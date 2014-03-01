@@ -38,32 +38,32 @@
 // Floats
 
 .right {
-	float: right;
-	padding: 0 0 $pad $pad;
+  float: right;
+  padding: 0 0 $pad $pad;
 }
 
 .right-search {
-	float: right;
-	padding: 0 0 $pad 0;
+  float: right;
+  padding: 0 0 $pad 0;
 }
 
 .left {
-	float: left;
-	padding: 0 $pad $pad 0;
+  float: left;
+  padding: 0 $pad $pad 0;
 }
 
 // Text alignment
 
 .align-right {
-	text-align: right;
+  text-align: right;
 }
 
 .align-center {
-	text-align: center;
+  text-align: center;
 }
 
 .align-left {
-	text-align: left;
+  text-align: left;
 }
 
 // Display classes
@@ -88,10 +88,10 @@
 
 // Statuses
 
-.has-valid {
-	color: $valid;
+.has-success {
+  color: $success;
 }
 
 .has-error {
-	color: $error;
+  color: $error;
 }

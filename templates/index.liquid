@@ -1,133 +1,50 @@
-{% layout "layout" %}
-{% block title %}Title here{% endblock %}
-{% block bodyclass %} class=""{% endblock %}
+{% layout "l-hub" %}
+{% block title %}Client Name Here: Project Hub{% endblock %}
+{% block bodyclass %} class="hub"{% endblock %}
 
 {% block content %}
+
 <div class="lc">
-	<h1>Hello, world!</h1>
-	
-	{{ 5 | lorem_ipsum:'p' }}
-	
-	<h1>Individual form components</h1>
-  <h2>Text input</h2>	
-	<input type="text" class="form-control" placeholder="Text input">
-	
-	<h2>Text area</h2>
-	<textarea class="form-control" rows="3"></textarea>
-	
-	<h2>Checkboxes and radios</h2>
-	
-	<div class="checkbox">
-  <label>
-    <input type="checkbox" value="">
-    Option one is this and that&mdash;be sure to include why it's great
-  </label>
-</div>
 
-<div class="radio">
-  <label>
-    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-    Option one is this and that&mdash;be sure to include why it's great
-  </label>
-</div>
-<div class="radio">
-  <label>
-    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-    Option two can be something else and selecting it will deselect option one
-  </label>
-</div>
+  <h1 id="Top">Client Name Here Project Hub</h1>
 
-<h2>Inline checkboxes</h2>
+  <h2>Project timeline</h2>
 
-<label class="checkbox-inline">
-  <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
-</label>
-<label class="checkbox-inline">
-  <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
-</label>
-<label class="checkbox-inline">
-  <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
-</label>
+  <ol class="timeline">
+    <li>
+      <div class="stamp">August 14th, 2013</div>
+      <div class="tl-content">Kickoff Meeting</div>
+      <a href="#">View notes</a>
+    </li>
+    <li>
+      <div class="stamp">August 9th, 2013</div>
+      <div class="tl-content">Sign contract</div>
+      <a href="#">View contract</a>
+    </li>
+    <li>
+      <div class="stamp">August 7th, 2013</div>
+      <div class="tl-content">Initial meeting</div>
+      <a href="#">Meeting Notes</a>
+    </li>
+    <li>
+      <div class="stamp">July 13th, 2013</div>
+      <div class="tl-content">Initial contact</div>
+    </li>
+  </ol>
+
+  <h2>Sitemap</h2>
+
+  <ul class="slat-list">
+    <li class="new"><a href="#">Version 2</a><span class="date">February 28, 2014</span></li>
+    <li class="new"><a href="#">Version 1</a><span class="date">February 15, 2014</span></li>
+  </ul>
+
+  <h2>Wireframes</h2>
+
+  <ul class="slat-list">
+    <li class="new"><a href="#">Version 1</a><span class="date">February 28, 2014</span></li>
+  </ul>
 
 
-<h2>Select menus</h2>
-
-<select class="form-control">
-  <option>1</option>
-  <option>2</option>
-  <option>3</option>
-  <option>4</option>
-  <option>5</option>
-</select>
-
-<select multiple class="form-control">
-  <option>1</option>
-  <option>2</option>
-  <option>3</option>
-  <option>4</option>
-  <option>5</option>
-</select>
-
-<h2>Validation states</h2>
-
-<div class="form-group has-success">
-  <label class="control-label" for="inputSuccess1">Input with success</label>
-  <input type="text" class="form-control" id="inputSuccess1">
-</div>
-<div class="form-group has-warning">
-  <label class="control-label" for="inputWarning1">Input with warning</label>
-  <input type="text" class="form-control" id="inputWarning1">
-</div>
-<div class="form-group has-error">
-  <label class="control-label" for="inputError1">Input with error</label>
-  <input type="text" class="form-control" id="inputError1">
-</div>
-
-
-	<h1>Form</h1>
-	
-<form role="form">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" id="exampleInputFile">
-    <p class="help-block">Example block-level help text here.</p>
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Check me out
-    </label>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
-
-<h1>Inline form</h1>
-
-<form class="form-inline" role="form">
-  <div class="form-group">
-    <label class="sr-only" for="exampleInputEmail2">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
-  </div>
-  <div class="form-group">
-    <label class="sr-only" for="exampleInputPassword2">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Remember me
-    </label>
-  </div>
-  <button type="submit" class="btn btn-default">Sign in</button>
-</form>
-
-
-</div>
-<!--/.lc-->	
+</div><!-- end .lc -->
 {% endblock %}

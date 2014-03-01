@@ -2,11 +2,131 @@
     Navigation
    ======================================================= */
 
+// Base styles
+
+.nav {
+  > ul {
+    @include zero;
+    list-style: none;
+    line-height: $line-height-small;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+//
+// Section navigation
+//
+
+.section-nav {
+  > ul {
+    border: 1px solid $gray-light-3;
+  }
+
+  li {
+    border-top: 1px solid $gray-light-3;
+    &:first-child {
+      border-top-width: 0;
+    }
+  }
+
+  a {
+    position: relative;
+    display: block;
+    padding: $space-half;
+    background-color: $gray-light;
+    color: $body-color;
+
+    &:hover,
+    &:active {
+      background-color: $white;
+
+      .pointer {
+        display: block;
+      }
+    }
+  }
+
+  .pointer {
+    position: absolute;
+    right: .5em;
+    top: 50%;
+    margin-top: -.75em;
+    color: $gray-light-4;
+
+    // State
+    display: none;
+
+  }
+
+  // You are here
+
+  .sec-nav-item & #sec-nav-item a,
+  .current > a,
+  .current {
+    background-color: $gray-light-2;
+    pointer-events: none;
+
+    .pointer {
+      display: block;
+    }
+  }
+}
+
+
+//
+//  Action nav
+//
+
+.action-nav {
+  > ul li {
+    display: inline-block;
+  }
+}
+
+//
+//  Inline nav
+//
+
+.inline-nav {
+
+  .separator {
+    display: none;
+  }
+
+  @include breakpoint(0 $bp-med) {
+    > ul li {
+      &:not(:first-child) {
+        margin-top: 1em;
+      }
+    }
+  }
+
+  @include breakpoint($bp-med) {
+    > ul li {
+      display: inline-block;
+      margin-right: .25em;
+      &:last-child .separator {
+        display: none;
+      }
+    }
+
+    .separator {
+      display: inline-block;
+      margin-left: .5em;
+      opacity: .5;
+    }
+  }
+}
+
+/*
 .nav {
 	clear: both;
 	overflow: hidden;
 	max-height: 0;
-	
+
 	a {
 		display: block;
 		padding: $pad;
@@ -29,12 +149,45 @@
 		a {
 			border: 0;
 		}
-		
+
 	}
 }
+*/
+
+/*  Nav list
+   ======================================================= */
+/*
+.nav-list {
+  @include clearfix;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    border-right: $border-width $border-style $border-color;
+    margin: 0;
+    padding: 0 $space-half;
+    float: left;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      border-right-width: 0;
+    }
+
+    a {
+      display: block;
+    }
+  }
+}
+*/
 
 /*  Pagination
    ======================================================= */
+
+/*
 
 .pagination {
 	overflow: hidden;
@@ -52,3 +205,4 @@
 		padding: $pad;
 	}
 }
+*/

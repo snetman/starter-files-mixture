@@ -35,9 +35,6 @@
 /* =======================================================
     Mixins
    ======================================================= */
-/* =======================================================
-    Custom mixins
-   ======================================================= */
 /* Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */
 * {
   -moz-box-sizing: border-box;
@@ -520,8 +517,8 @@ th {
   }
 }
 
-.has-valid {
-  color: #089e00;
+.has-success {
+  color: #5ddd00;
 }
 
 .has-error {
@@ -557,15 +554,15 @@ body {
     Links
    ======================================================= */
 a {
-  color: blue;
+  color: #007aff;
   text-decoration: underline;
   outline: 0;
 }
 a:hover {
-  color: #3333ff;
+  color: #3395ff;
 }
 a:focus {
-  color: #3333ff;
+  color: #3395ff;
 }
 
 /* =======================================================
@@ -660,7 +657,7 @@ p {
 
 blockquote {
   font-style: italic;
-  border-left: 1px solid gray;
+  border-left: 1px solid #cccccc;
   color: #666666;
   margin-bottom: 1.5rem;
   padding-left: 1.5rem;
@@ -674,7 +671,7 @@ hr {
   padding: 0;
   height: 2px;
   border: 0;
-  border-top: 1px solid gray;
+  border-top: 1px solid #cccccc;
 }
 
 code {
@@ -767,6 +764,10 @@ figcaption {
 /* =======================================================
     Forms
    ======================================================= */
+form {
+  margin-bottom: 1.5rem;
+}
+
 /*  Normalize non-controls
    ======================================================= */
 fieldset {
@@ -785,7 +786,7 @@ legend {
   line-height: inherit;
   color: black;
   border: 0;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #cccccc;
 }
 
 label {
@@ -845,7 +846,7 @@ output {
   color: #333333;
   background-color: #f9f9f9;
   background-image: none;
-  border: 1px solid gray;
+  border: 1px solid #cccccc;
   border-radius: 5px;
   /*  Disabled and read-only inputs
      ======================================================= */
@@ -954,6 +955,10 @@ input[type="checkbox"],
   line-height: 1.5;
 }
 
+.input-sized {
+  width: auto;
+}
+
 /*  Form control feedback states
    ======================================================= */
 .has-feedback {
@@ -976,7 +981,7 @@ input[type="checkbox"],
 }
 
 .has-success {
-  border-color: #089e00;
+  border-color: #5ddd00;
 }
 
 .has-error {
@@ -986,15 +991,16 @@ input[type="checkbox"],
 /*  Static form control text
    ======================================================= */
 .form-control-static {
+  margin-top: 0;
   margin-bottom: 0;
 }
 
 /*  Form help
    ======================================================= */
 .help-block {
+  clear: both;
   display: block;
-  margin-top: 0.375rem;
-  margin-bottom: 0.75rem;
+  margin: 0;
   font-size: 0.75em;
   color: gray;
 }
@@ -1043,6 +1049,25 @@ input[type="checkbox"],
   .form-inline .has-feedback .form-control-feedback {
     top: 0;
   }
+}
+
+.select-group {
+  *zoom: 1;
+}
+.select-group:before, .select-group:after {
+  display: table;
+  content: "";
+}
+.select-group:after {
+  clear: both;
+}
+.select-group > .form-control {
+  float: right;
+  width: 65%;
+}
+.select-group > select.form-control {
+  float: left;
+  max-width: 33%;
 }
 
 /*  Horizontal forms
@@ -1094,44 +1119,25 @@ input[type="checkbox"],
 }
 */
 /* =======================================================
-    Original form styles
-   ======================================================= */
-/*  Specific forms
-   ======================================================= */
-/*
-.search-field {
-	padding-right: 3em;
-}
-
-.inline-form .search-submit {
-	background: none;
-	padding: 0.78em 1em;
-	border: 0;
-	border-left: 1px solid $gray-light-3;
-	color: $gray;
-}
-
-*/
-/* =======================================================
     Tables
    ======================================================= */
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  border: 1px solid gray;
+  border: 1px solid #cccccc;
   width: 100%;
 }
 
 th {
   background: #f9f9f9;
-  border: 1px solid gray;
+  border: 1px solid #cccccc;
   padding: 0.2em;
   font-weight: 700;
   text-align: left;
 }
 
 td {
-  border: 1px solid gray;
+  border: 1px solid #cccccc;
   padding: 0.2em;
 }
 
@@ -1188,7 +1194,7 @@ td {
 }
 
 .gi-bordered {
-  border-top: 1px solid gray;
+  border-top: 1px solid #cccccc;
   padding-top: 0.75rem;
 }
 
@@ -1287,47 +1293,64 @@ td {
 }
 
 /* =======================================================
-    Accordion
+    Alerts
    ======================================================= */
-.accordion {
-  margin-bottom: 1.5rem;
-}
-
-.acc-handle {
-  background: #333333;
-  color: white;
-  font-family: "HelveticaNeue", "Helvetica", "Arial", sans-serif;
-  font-weight: 700;
-  display: block;
+/* TODO: refactor the close button to work like the delete brick button */
+.alert {
   position: relative;
-  padding: 0.75rem;
-  border-bottom: 1px solid #666666;
+  margin-bottom: 1.5rem;
+  padding: 0.75em 3.75rem 0.8em 0.75em;
+  overflow: hidden;
 }
-.acc-handle:after {
-  content: "+";
-  float: right;
+.alert > p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.75em;
+  line-height: 1.2;
 }
-.acc-handle:hover {
+.alert a {
   color: white;
-  background: #262626;
 }
-.acc-handle.active {
-  background: #404040;
+.alert a:hover, .alert a:active {
+  text-decoration: none;
 }
-.acc-handle.active:after {
-  content: "-";
+.alert .close {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3rem;
+  height: 100%;
+  font-size: 1.5em;
+  text-align: center;
+  text-decoration: none;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.alert .close:hover, .alert .close:active {
+  background-color: transparent;
+}
+.alert .close .x {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.alert-success {
+  background-color: #5ddd00;
+  color: white;
 }
 
 /* =======================================================
-    Ads
+    Badge
    ======================================================= */
-/* =======================================================
-    Article
-   ======================================================= */
-.byline {
-  font-size: 0.875em;
-  font-style: italic;
-  margin-bottom: 0.75rem;
+.badge {
+  display: inline-block;
+  padding-left: 0.375rem;
+  padding-right: 0.375rem;
+  background-color: green;
+  color: white;
+  font-size: 0.75em;
+  font-weight: 700;
 }
 
 /* =======================================================
@@ -1448,6 +1471,61 @@ td {
 }
 */
 /* =======================================================
+    Bricks
+   ======================================================= */
+.brick-stack {
+  margin-bottom: 2.25rem;
+}
+.brick-stack > h2 {
+  margin-bottom: 0.75rem;
+}
+.brick-stack > div {
+  position: relative;
+  border: 1px solid #cccccc;
+  margin: 0;
+  padding: 1.125rem 3rem 1.125rem 0.75rem;
+  background-color: #f9f9f9;
+}
+.brick-stack > div + div {
+  border-top-width: 0;
+}
+.brick-stack > div .form-control {
+  background-color: white;
+}
+
+.add-brick {
+  display: block;
+  padding-top: 0.75rem;
+}
+
+.delete-brick {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-left: 1px solid #cccccc;
+  height: 100%;
+  width: 2.25rem;
+  font-size: 1.5em;
+  text-align: center;
+  text-decoration: none;
+  background-color: #efefef;
+  color: gray;
+}
+.delete-brick .x {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 100%;
+  margin-top: -.875em;
+  text-align: center;
+}
+.delete-brick:hover, .delete-brick:active {
+  background-color: white;
+  color: #ff3300;
+}
+
+/* =======================================================
     Buttons
    ======================================================= */
 .btn {
@@ -1523,7 +1601,7 @@ td {
   cursor: pointer;
   background-color: transparent;
   border-color: transparent;
-  color: blue;
+  color: #007aff;
 }
 .btn-link:active {
   background-color: transparent;
@@ -1533,7 +1611,7 @@ td {
   border-color: transparent;
 }
 .btn-link:hover, .btn-link:focus {
-  color: #3333ff;
+  color: #3395ff;
   background-color: transparent;
 }
 
@@ -1580,234 +1658,21 @@ td {
 
 /* TODO: Re-evaluate these button group styles from Bootstrap for use */
 /* =======================================================
-    Comments
-   ======================================================= */
-.comments li {
-  margin-bottom: 1.5rem;
-}
-
-.comment-container {
-  overflow: hidden;
-  margin-bottom: 1.5rem;
-}
-
-.comment-meta {
-  float: left;
-  width: 6.5em;
-}
-.comment-meta img {
-  display: block;
-  border: 1px solid #eeeeee;
-  margin-bottom: 0.75rem;
-}
-
-.comment-name {
-  font-size: 0.75em;
-}
-
-.comment-text {
-  margin-left: 9em;
-}
-
-/* =======================================================
-    Site content
-   ======================================================= */
-#content {
-  *zoom: 1;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  overflow: hidden;
-}
-#content:before, #content:after {
-  display: table;
-  content: "";
-}
-#content:after {
-  clear: both;
-}
-
-/* =======================================================
-    Fader
-   ======================================================= */
-/*
-<div id="Fader" class="fader">
-	<div class="wrapper">
-    <div class="slide">
-      <img src="http://farm6.staticflickr.com/5222/5688982542_14104a549a_b.jpg"/>
-      <div class="caption">
-        <p>Caption for image 1 here lorem ipsum dolor sit amet consecutat velorem dolor.</p>
-      </div>
-    </div>
-    <div class="slide">
-      <img src="http://farm6.staticflickr.com/5110/5689029162_72c4aeeeed_b.jpg"/>
-      <div class="caption">
-        <p>Caption for image 2 here amet consecutat velorem dolor. Lorem ipsum dolor sit amet consec. Adipiscing elit vestibulum est dolorem valia sed wintorum.</p>
-      </div>
-    </div>
-    <div class="slide">
-      <img src="http://farm6.staticflickr.com/5303/5689048144_388d4f13b4_b.jpg"/>
-      <div class="caption">
-        <p>Caption for image 3 here adipiscing elit ventorum dolor.</p>
-      </div>
-    </div>
-	</div><!-- / .wrapper -->
-  <div class="fader_controls">
-		<div class="pager prev" data-target="prev">&lsaquo;</div>
-		<div class="pager next" data-target="next">&rsaquo;</div>
- 		<ul class="pager-list"></ul>
-  </div>
-</div><!-- / #Fader -->
-*/
-.fader {
-  position: relative;
-  padding-top: 75%;
-  overflow: hidden;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform-style: preserve-3d;
-}
-.fader.widescreen {
-  padding-top: 56.25%;
-}
-
-.fader .slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  z-index: 1;
-  opacity: 0;
-}
-.fader .slide img {
-  height: auto;
-}
-.fader .caption {
-  position: absolute;
-  bottom: 0;
-  padding: 0.75rem;
-  width: 100%;
-  font-size: 0.875em;
-  line-height: 1.2;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-}
-.fader .caption p {
-  margin: 0;
-}
-.fader .prev,
-.fader .next {
-  position: absolute;
-  height: 80px;
-  line-height: 55px;
-  width: 50px;
-  font-size: 100px;
-  text-align: center;
-  color: #fff;
-  top: 50%;
-  left: 0;
-  z-index: 4;
-  margin-top: -25px;
-  cursor: pointer;
-  opacity: .7;
-  transition: all 150ms;
-}
-.fader .prev:hover,
-.fader .next:hover {
-  opacity: 1;
-}
-.fader .next {
-  left: auto;
-  right: 0;
-}
-.fader .pager-list {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  text-align: center;
-  z-index: 4;
-  padding: 0;
-}
-.fader .pager-list li {
-  float: left;
-  border-radius: 0.75rem;
-  margin: 0 0 0 0.375rem;
-  width: 0.75rem;
-  height: 0.75rem;
-  font: 0/0 a;
-  text-shadow: none;
-  color: transparent;
-  line-height: 1;
-  background: #fff;
-  opacity: .7;
-  cursor: pointer;
-  transition: all 150ms;
-}
-.fader .pager-list li:hover, .fader .pager-list li.active {
-  opacity: 1;
-}
-
-/*  Styles for the carousel version
-   ======================================================= */
-/*
-.carousel{
-	margin-top: 100px;
-	padding-top: 200px;
-	background: #000;
-	overflow: hidden;
-	position: relative;
-}
-
-.carousel .wrapper{
-	position: absolute;
-	top: 0;
-	width: 1000%;
-	left: 50%;
-	height: 100%;
-	margin-left: -500%;
-	text-align: center;
-	white-space: nowrap;
-	font-size: 0;
-	
-	-webkit-backface-visibility: hidden;
-	-webkit-transform-style: preserve-3d;
-}
-
-.carousel .slide{
-	height: 200px;
-	
-	-webkit-backface-visibility: hidden;
-	-webkit-transform-style: preserve-3d;
-}
-*/
-/* =======================================================
     Site footer
    ======================================================= */
 .site-footer {
-  clear: both;
-  overflow: hidden;
-  padding: 0.75rem 0;
-  background: #cccccc;
+  margin-top: 6rem;
+  padding: 1.5rem;
+  background: #dddddd;
   color: #333333;
+  font-size: 0.75em;
 }
 .site-footer a {
-  color: #f9f9f9;
+  color: #333333;
+  text-decoration: none;
 }
-
-.nav-footer li {
-  border-bottom: 1px solid #333333;
-}
-@media (min-width: 46.75em) {
-  .nav-footer li {
-    border: 0;
-    float: left;
-  }
-}
-.nav-footer a {
-  display: block;
-  padding: 1.5rem;
-}
-
-.copyright {
-  font-size: 0.75em;
+.site-footer a:hover, .site-footer a:active {
+  text-decoration: underline;
 }
 
 /* =======================================================
@@ -1831,6 +1696,35 @@ td {
 }
 .logo > a {
   color: white;
+}
+
+/* =======================================================
+    Project hub
+   ======================================================= */
+.hub .slat-list > li {
+  padding-top: .25em;
+  padding-bottom: .25em;
+}
+.hub .slat-list .new {
+  position: relative;
+}
+.hub .slat-list .new:before {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 100%;
+  top: .75em;
+  border-radius: .625em;
+  margin-right: .375em;
+  height: .625em;
+  width: .625em;
+  background-color: #007aff;
+  color: #007aff;
+}
+.hub .date {
+  display: block;
+  font-size: 0.75em;
+  color: gray;
 }
 
 /* =======================================================
@@ -1878,19 +1772,35 @@ td {
 /* TODO: Review these make sure they don't suck and are redundant to nav */
 /* TODO: Check out Cornerstone's lists for things like link lists with counts */
 .inline-list {
-  /* TODO: remove bullets from this list and default padding that I put back in */
+  margin: 0;
+  padding: 0;
 }
-.inline-list li {
+.inline-list > li {
   display: inline-block;
+  list-style: none;
 }
 
-.social-list li {
-  margin: 0 0.4rem 1.5rem 0;
+.slat-list {
+  border-bottom: 1px solid #cccccc;
+  margin-left: 0;
+  padding-left: 0;
 }
-.social-list a {
-  font-size: 1.6em;
+.slat-list > li {
+  list-style: none;
+  border-top: 1px solid #cccccc;
 }
 
+/*
+.social-list {
+    li {
+        margin: 0 0.4rem $space 0;
+    }
+
+    a {
+        font-size: 1.6em;
+    }
+}
+*/
 .headline-list {
   margin-bottom: 1.5rem;
 }
@@ -2155,49 +2065,167 @@ td {
 /* =======================================================
     Navigation
    ======================================================= */
-.nav {
-  clear: both;
-  overflow: hidden;
-  max-height: 0;
+.nav > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 1.2;
 }
 .nav a {
+  text-decoration: none;
+}
+
+.section-nav > ul {
+  border: 1px solid #dddddd;
+}
+.section-nav li {
+  border-top: 1px solid #dddddd;
+}
+.section-nav li:first-child {
+  border-top-width: 0;
+}
+.section-nav a {
+  position: relative;
   display: block;
-  padding: 1.5rem;
-  border-top: 1px solid #eeeeee;
+  padding: 0.75rem;
+  background-color: #f9f9f9;
+  color: #333333;
 }
-.nav.is-active {
-  max-height: 40em;
+.section-nav a:hover, .section-nav a:active {
+  background-color: white;
 }
-@media all and (min-width: 748px) {
-  .nav {
-    max-height: none;
-    float: right;
-    clear: none;
+.section-nav a:hover .pointer, .section-nav a:active .pointer {
+  display: block;
+}
+.section-nav .pointer {
+  position: absolute;
+  right: .5em;
+  top: 50%;
+  margin-top: -.75em;
+  color: #cccccc;
+  display: none;
+}
+.sec-nav-item .section-nav #sec-nav-item a,
+.section-nav .current > a,
+.section-nav .current {
+  background-color: #eeeeee;
+  pointer-events: none;
+}
+.sec-nav-item .section-nav #sec-nav-item a .pointer,
+.section-nav .current > a .pointer,
+.section-nav .current .pointer {
+  display: block;
+}
+
+.action-nav > ul li {
+  display: inline-block;
+}
+
+.inline-nav .separator {
+  display: none;
+}
+@media (min-width: 0) and (max-width: 46.75em) {
+  .inline-nav > ul li:not(:first-child) {
+    margin-top: 1em;
   }
-  .nav li {
-    float: left;
+}
+@media (min-width: 46.75em) {
+  .inline-nav > ul li {
+    display: inline-block;
+    margin-right: .25em;
   }
-  .nav a {
-    border: 0;
+  .inline-nav > ul li:last-child .separator {
+    display: none;
+  }
+  .inline-nav .separator {
+    display: inline-block;
+    margin-left: .5em;
+    opacity: .5;
   }
 }
 
+/*
+.nav {
+	clear: both;
+	overflow: hidden;
+	max-height: 0;
+
+	a {
+		display: block;
+		padding: $pad;
+		border-top: 1px solid $gray-light-2;
+	}
+
+	&.is-active {
+		max-height: 40em;
+	}
+
+	@media all and (min-width: $bp-med) {
+		max-height: none;
+		float: right;
+		clear: none;
+
+		li {
+			float: left;
+		}
+
+		a {
+			border: 0;
+		}
+
+	}
+}
+*/
+/*  Nav list
+   ======================================================= */
+/*
+.nav-list {
+  @include clearfix;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    border-right: $border-width $border-style $border-color;
+    margin: 0;
+    padding: 0 $space-half;
+    float: left;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      border-right-width: 0;
+    }
+
+    a {
+      display: block;
+    }
+  }
+}
+*/
 /*  Pagination
    ======================================================= */
-.pagination {
-  overflow: hidden;
-}
-.pagination li {
-  float: left;
-  border-right: 1px solid #eeeeee;
-}
-.pagination li:last-child {
-  border: 0;
-}
-.pagination a {
-  padding: 1.5rem;
-}
+/*
 
+.pagination {
+	overflow: hidden;
+
+	li {
+		float: left;
+		border-right: 1px solid $gray-light-2;
+
+		&:last-child {
+			border: 0;
+		}
+	}
+
+	a {
+		padding: $pad;
+	}
+}
+*/
 /* =======================================================
     Sections
    ======================================================= */
@@ -2207,27 +2235,6 @@ td {
 
 .section-title {
   margin-bottom: 0.75rem;
-}
-
-/* =======================================================
-    Social share
-   ======================================================= */
-.social-share {
-  overflow: hidden;
-  margin-bottom: 1.5rem;
-}
-.social-share li {
-  float: left;
-  margin-right: 0.375rem;
-}
-.social-share a {
-  background: #333333;
-  color: white;
-  display: block;
-  padding: 0.75rem;
-}
-.social-share a:hover {
-  background: gray;
 }
 
 /* =======================================================
@@ -2282,66 +2289,55 @@ td {
 }
 
 /* =======================================================
-    Tooltip
+    Timeline
    ======================================================= */
-.tooltip-container {
-  display: inline-block;
+.timeline {
+  border-left: 4px solid #dddddd;
+  margin-left: 0;
+  padding-bottom: 3em;
+  padding-left: 0;
   position: relative;
 }
-.tooltip-container:hover .tooltip {
+.timeline:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -1.47em;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background: #dddddd;
+  border: 5px solid #dddddd;
+}
+
+.timeline > li {
+  margin: 0;
+  padding: 0;
+  padding-left: 1em;
+  margin-bottom: 3em;
+  position: relative;
+  list-style: none;
+}
+.timeline > li a {
   display: block;
 }
-
-.tooltip-link {
-  background: #f9f9f9;
-}
-
-.tooltip {
-  display: none;
+.timeline > li:before {
+  content: "";
   position: absolute;
-  top: 1.5em;
-  left: 0;
-  width: 18em;
-  padding: 1.5rem;
-  background: white;
-  border: 1px solid gray;
-  box-shadow: 0.3em 0.3em 1em 0 rgba(0, 0, 0, 0.2);
-}
-.tooltip h2 {
-  margin-top: 0;
+  top: 0;
+  left: -0.95em;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background: #fff;
+  border: 4px solid #dddddd;
 }
 
-/* =======================================================
-    Wireframe objects
-   ======================================================= */
-[class*='wire'] {
-  background-color: #eeeeee;
-  color: black;
-  padding: 3rem 1.5rem;
-  text-align: center;
+.timeline .tl-content {
+  font-weight: 700;
 }
 
-.wire-thin {
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
-}
-
-.wire-small {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
-.wire-medium {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
-
-.wire-large {
-  padding-top: 12rem;
-  padding-bottom: 12rem;
-}
-
-.wire-huge {
-  padding-top: 18rem;
-  padding-bottom: 18rem;
+.timeline .stamp {
+  font-size: 0.75em;
+  color: gray;
 }

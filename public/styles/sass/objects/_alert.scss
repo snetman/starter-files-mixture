@@ -1,0 +1,66 @@
+/* =======================================================
+    Alerts
+   ======================================================= */
+
+/* TODO: refactor the close button to work like the delete brick button */
+
+//
+//  Base styles
+//
+
+.alert {
+  position: relative;
+  margin-bottom: $space;
+  padding: .75em $space-double+$space-half .8em .75em;
+  overflow: hidden;
+
+  > p {
+    @include zero;
+    font-size: $font-size-small;
+    line-height: $line-height-small;
+  }
+
+  a {
+    color: $white;
+    &:hover,
+    &:active {
+      text-decoration: none;
+    }
+  }
+
+  // Close button
+
+  .close {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $space-double;
+    height: 100%;
+    font-size: $font-size-large;
+    text-align: center;
+    text-decoration: none;
+    background-color: $black;
+    background-color: $overlay-dark;
+    &:hover,
+    &:active {
+      background-color: transparent;
+    }
+
+    // The "x"
+
+    .x {
+      display: inline-block;
+      vertical-align: baseline;
+    }
+  }
+}
+
+//
+//  Success alert
+//
+
+.alert-success {
+  background-color: $success;
+  color: $white;
+}
