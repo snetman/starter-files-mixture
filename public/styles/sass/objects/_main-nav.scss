@@ -78,11 +78,20 @@ $nav-off-canvas-width: 70%;
         left: 0;
         @include transform(translate3d(-100%,0,0));
         @include backface-visibility(hidden);
+        .main-nav {
+          opacity: .25;
+          @include transform(scale3d(1.5,1,1));
+          @include transform-origin(right, 50%);
+          @include transition(all, 0s, linear, .3s);
+        }
       }
       #inner-wrap {
         @include transform(translate3d(0,0,0));
-        @include transition(transform, .5s, ease);
         @include backface-visibility(hidden);
+        -ms-transition: -ms-transform .2s ease;
+        -moz-transition: -moz-transform .2s ease;
+        -webkit-transition: -webkit-transform .2s ease;
+        transition: transform .2s ease;
       }
     }
   }
@@ -108,7 +117,10 @@ $nav-off-canvas-width: 70%;
     }
 
     .nav-btn {
-      display: none;
+      opacity: .2;
+      &:hover {
+        opacity: .2;
+      }
     }
 
     // If I've got access to transitions & transforms
@@ -117,30 +129,22 @@ $nav-off-canvas-width: 70%;
       #inner-wrap {
         left: 0;
         @include transform(translate3d($nav-off-canvas-width,0,0));
-        transition: transform .2s ease;
+        -ms-transition: -ms-transform .2s ease;
+        -moz-transition: -moz-transform .2s ease;
         -webkit-transition: -webkit-transform .2s ease;
+        transition: transform .2s ease;
+      }
+      #nav {
+        left: 0;
+        .main-nav {
+          opacity: 1;
+          @include transform(scale3d(1,1,1));
+          @include transition(all, .35s, ease);
+        }
       }
     }
 
   }
-
-    // If I've got transforms and transitions to use...
-/*
-    .js-nav-open.csstransforms3d.csstransitions {
-      #inner-wrap{
-        left: 0;
-        //@include transform(translate3d($nav-off-canvas-width,0,0) scale3d(1,1,1));
-        //transform: translate3d(70%,0,0);
-        //@include transition(transform, .5s, linear);
-        background-color: green;
-
-        -webkit-transform: translate3d(400px,0,0);
-        transform: translate3d(400px,0,0);
-
-      }
-    }
-*/
-
 } /* end breakpoint */
 
 //

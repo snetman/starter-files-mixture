@@ -39,24 +39,28 @@ $(document).ready(function (){
 /* =======================================================
     Toggle responsive nav
    ======================================================= */
-/*
-  $menu = $('.menu'),
-  $menulink = $('#menu-link');
 
-  $menulink.click(function() {
-    $(this).toggleClass('is-active');
-    $menu.toggleClass('is-active');
-    return false;
-  });
-*/
   // Define functions
+
   $closeNav = function () {
     $('html').removeClass('js-nav-open');
     return false;
   };
+
   $openNav = function () {
-    $('html').addClass('js-nav-open');
+
+    // Where do I record my states?
+    var $container = $('html');
+
+    // If the nav is already open, then just close it if I double hit the open button
+    if ($container.hasClass('js-nav-open')) {
+      $container.removeClass('js-nav-open');
+    } else {
+      $container.addClass('js-nav-open');
+    }
+
     return false;
+
   };
 
   // Handle clicks on the "open nav" button

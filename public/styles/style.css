@@ -1918,22 +1918,39 @@ td {
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
   }
+  .js.csstransforms3d.csstransitions #nav .main-nav {
+    opacity: .25;
+    -webkit-transform: scale3d(1.5, 1, 1);
+    -moz-transform: scale3d(1.5, 1, 1);
+    -ms-transform: scale3d(1.5, 1, 1);
+    -o-transform: scale3d(1.5, 1, 1);
+    transform: scale3d(1.5, 1, 1);
+    -webkit-transform-origin: right 50%;
+    -moz-transform-origin: right 50%;
+    -ms-transform-origin: right 50%;
+    -o-transform-origin: right 50%;
+    transform-origin: right 50%;
+    -webkit-transition: all 0s linear 0.3s;
+    -moz-transition: all 0s linear 0.3s;
+    -ms-transition: all 0s linear 0.3s;
+    -o-transition: all 0s linear 0.3s;
+    transition: all 0s linear 0.3s;
+  }
   .js.csstransforms3d.csstransitions #inner-wrap {
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
     -o-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    -webkit-transition: transform 0.5s ease 0s;
-    -moz-transition: transform 0.5s ease 0s;
-    -ms-transition: transform 0.5s ease 0s;
-    -o-transition: transform 0.5s ease 0s;
-    transition: transform 0.5s ease 0s;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
+    -ms-transition: -ms-transform .2s ease;
+    -moz-transition: -moz-transform .2s ease;
+    -webkit-transition: -webkit-transform .2s ease;
+    transition: transform .2s ease;
   }
 
   .js-nav-open #inner-wrap {
@@ -1952,7 +1969,10 @@ td {
     display: block;
   }
   .js-nav-open .nav-btn {
-    display: none;
+    opacity: .2;
+  }
+  .js-nav-open .nav-btn:hover {
+    opacity: .2;
   }
   .js-nav-open.csstransitions.csstransforms3d #inner-wrap {
     left: 0;
@@ -1961,25 +1981,27 @@ td {
     -ms-transform: translate3d(70%, 0, 0);
     -o-transform: translate3d(70%, 0, 0);
     transform: translate3d(70%, 0, 0);
-    transition: transform .2s ease;
+    -ms-transition: -ms-transform .2s ease;
+    -moz-transition: -moz-transform .2s ease;
     -webkit-transition: -webkit-transform .2s ease;
+    transition: transform .2s ease;
   }
-
-  /*
-      .js-nav-open.csstransforms3d.csstransitions {
-        #inner-wrap{
-          left: 0;
-          //@include transform(translate3d($nav-off-canvas-width,0,0) scale3d(1,1,1));
-          //transform: translate3d(70%,0,0);
-          //@include transition(transform, .5s, linear);
-          background-color: green;
-  
-          -webkit-transform: translate3d(400px,0,0);
-          transform: translate3d(400px,0,0);
-  
-        }
-      }
-  */
+  .js-nav-open.csstransitions.csstransforms3d #nav {
+    left: 0;
+  }
+  .js-nav-open.csstransitions.csstransforms3d #nav .main-nav {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    -moz-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
+    -o-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    -webkit-transition: all 0.35s ease 0s;
+    -moz-transition: all 0.35s ease 0s;
+    -ms-transition: all 0.35s ease 0s;
+    -o-transition: all 0.35s ease 0s;
+    transition: all 0.35s ease 0s;
+  }
 }
 /* end breakpoint */
 .main-nav {
