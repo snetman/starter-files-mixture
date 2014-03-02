@@ -42,7 +42,7 @@ $(document).ready(function (){
 /*
   $menu = $('.menu'),
   $menulink = $('#menu-link');
-  
+
   $menulink.click(function() {
     $(this).toggleClass('is-active');
     $menu.toggleClass('is-active');
@@ -51,23 +51,23 @@ $(document).ready(function (){
 */
   // Define functions
   $closeNav = function () {
-    $('body').removeClass('js-nav-open');
+    $('html').removeClass('js-nav-open');
     return false;
   };
   $openNav = function () {
-    $('body').addClass('js-nav-open');
+    $('html').addClass('js-nav-open');
     return false;
   };
-  
-  // Handle clicks on the "open nav" button 
+
+  // Handle clicks on the "open nav" button
   $('#nav-open-btn').on('click', $openNav);
-  
+
   // Close the nav when I click on the close button
   $('#nav-close-btn').on('click', $closeNav);
-  
+
   // Close the nav when I click on the nav area outside the links
   $('#nav').on('click', $closeNav);
-  
+
 });
 
 /* =======================================================
@@ -76,38 +76,38 @@ $(document).ready(function (){
   /*
   $tabs = $('.tab');
   $tabtargets = $('.tab-target');
-  
+
   $tabs.on('click', function(event) {
-    
+
     event.preventDefault(); // Prevent the default behavior so the page doesn't jump
-    
+
     if ($(this).hasClass('is-active')) { // If the clicked tab is currently active...
-            
+
       $(this).removeClass('is-active'); // De-activate the clicked tab
       var target = $(this).attr('href'); // Get the target
       $(target).removeClass('is-active'); // De-activate the target
-    
+
     } else { // If the clicked toggle is not currently active...
-      
+
       $tabs.removeClass('is-active'); // De-activate all tabs in case another is active
       $(this).addClass('is-active'); // Activate the clicked tab
       $tabtargets.removeClass('is-active'); // De-activate all tab targets
       var target = $(this).attr('href'); // Get the new target
       $(target).addClass('is-active'); // Make the new target active
-      
+
     }
-    
+
   });
   */
 
 /* optional triggers
 
 $(window).load(function() {
-	
+
 });
 
 $(window).resize(function() {
-	
+
 });
 
 */

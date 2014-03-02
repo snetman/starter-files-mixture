@@ -2,7 +2,9 @@
     Navigation
    ======================================================= */
 
-// Base styles
+//
+//  Base styles
+//
 
 $nav-off-canvas-width: 70%;
 
@@ -13,97 +15,137 @@ $nav-off-canvas-width: 70%;
   padding-top: pem(72); // Push nav down from top to make room for close button
   overflow: hidden;
   width: 100%;
-  
+
   color: #fff;
-  
+
   &:not(:target) {
     z-index: 1;
     height: 0;
-    
+
     .close-btn {
       display: none; // Hide the close button at first
     }
   }
-  
+
   &:target {
     .close-btn {
       display: block; // Show the close button when the nav is a target
     }
   }
-  
+
   @include breakpoint($bp-med) {
     position: relative;
     padding-top: 0;
-    
+
     background-color: $gray-dark;
-    
+
     &:not(:target) {
       height: auto;
     }
   }
 }
 
-/*  If javascript is available, do fancier stuff on mobile
-   ======================================================= */
+//
+//  If javascript is available, do fancier stuff on mobile
+//
 
 @include breakpoint(0 $bp-med) {
 
   // If there's js available, I can do some off-canvas toggling
-  
+
   .js {
-  
+
     #nav {
       left: (0 - $nav-off-canvas-width);
       height: 100%;
       width: $nav-off-canvas-width;
       background: $gray-dark;
       @include box-shadow(inset pem(-24) 0 pem(24) pem(-12) rgba(0,0,0, 0.25));
-  
+
       .close-btn {
         display: block;
       }
     }
-    
+
     #inner-wrap {
       left: 0;
-      
-      // When nav is open, shift inner wrap to the left
-      
-      .js-nav-open & {
-        left: $nav-off-canvas-width;
+    }
+
+    // If I've got transform and transitions to use...
+
+    &.csstransforms3d.csstransitions {
+      #nav {
+        left: 0;
+        @include transform(translate3d(-100%,0,0));
+        @include backface-visibility(hidden);
       }
-    }  
+      #inner-wrap {
+        @include transform(translate3d(0,0,0));
+        @include transition(transform, .5s, ease);
+        @include backface-visibility(hidden);
+      }
+    }
   }
 
-  // When this class is applied via js, shift things around
-    
+  // When this class is applied via js, bring in the nav
+
   .js-nav-open {
-  
+
     #inner-wrap {
       left: $nav-off-canvas-width; // Push the entire site over
     }
-  
+
     #nav {
       height: 100%;
       width: $nav-off-canvas-width;
       left: (0 - $nav-off-canvas-width);
       background: $gray-dark;
       @include box-shadow(inset pem(-24) 0 pem(24) pem(-12) rgba(0,0,0, 0.25));
-  
+
       .close-btn {
         display: block;
       }
     }
-    
+
     .nav-btn {
       display: none;
     }
+
+    // If I've got access to transitions & transforms
+
+    &.csstransitions.csstransforms3d {
+      #inner-wrap {
+        left: 0;
+        @include transform(translate3d($nav-off-canvas-width,0,0));
+        transition: transform .2s ease;
+        -webkit-transition: -webkit-transform .2s ease;
+      }
+    }
+
   }
-  
+
+    // If I've got transforms and transitions to use...
+/*
+    .js-nav-open.csstransforms3d.csstransitions {
+      #inner-wrap{
+        left: 0;
+        //@include transform(translate3d($nav-off-canvas-width,0,0) scale3d(1,1,1));
+        //transform: translate3d(70%,0,0);
+        //@include transition(transform, .5s, linear);
+        background-color: green;
+
+        -webkit-transform: translate3d(400px,0,0);
+        transform: translate3d(400px,0,0);
+
+      }
+    }
+*/
+
 } /* end breakpoint */
 
-/*  Main nav
-   ======================================================= */
+//
+//  Main navigation styles
+//
 
 .main-nav {
   @include zero;
@@ -111,7 +153,7 @@ $nav-off-canvas-width: 70%;
   display: block;
   list-style: none;
   li {
-    position: relative; 
+    position: relative;
     border-top: $border-width $border-style $gray;
 
     &:last-child {
@@ -130,7 +172,7 @@ $nav-off-canvas-width: 70%;
     }
   }
 
-  @include breakpoint($bp-med) {  
+  @include breakpoint($bp-med) {
     text-align: center;
     white-space: nowrap;
 
@@ -155,8 +197,9 @@ $nav-off-canvas-width: 70%;
 
 }
 
-/*  Close button
-   ======================================================= */
+//
+//  The close button
+//
 
 .close-btn {
   position: absolute;
@@ -182,27 +225,28 @@ $nav-off-canvas-width: 70%;
   &:hover {
       @include opacity(1);
   }
-  
+
   @include breakpoint($bp-med) {
     @include visuallyhidden;
   }
 }
 
-/*  Nav button
-   ======================================================= */
+//
+//  The navigation button
+//
 
 .nav-btn {
   position: absolute;
   top: $space-half;
   left: $space-half;
   display: block;
-  
+
   width: pem(42);
   height: pem(36);
   border: 0;
   outline: none;
   @include zero;
-  
+
   background: $gray-dark url("../images/nav-icon.svg") left center no-repeat;
   background-size: pem(30) pem(24);
   overflow: hidden;
@@ -215,9 +259,9 @@ $nav-off-canvas-width: 70%;
   &:focus {
     @include opacity(1);
   }
-  
+
   @include breakpoint($bp-med) {
     @include visuallyhidden;
   }
-  
+
 }

@@ -1,0 +1,14 @@
+{% layout "layout" %}
+{% block title %}Homepage{% endblock %}
+{% block bodyclass %} class="home"{% endblock %}
+
+{% block content %}
+<div class="lc">
+
+	<h1>Hello, world!</h1>
+
+	{{ 5 | lorem_ipsum:'p' }}
+
+</div>
+<!--/.lc-->
+{% endblock %}
