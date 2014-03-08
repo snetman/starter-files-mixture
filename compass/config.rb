@@ -4,7 +4,7 @@ project_path=File.expand_path("..",File.dirname(__FILE__))
 # We also support plugins and frameworks, please read the docs http://docs.mixture.io/preprocessors#compass
 # Require any additional compass plugins here.
 require "breakpoint"
-require "singularitygs"
+require "susy"
 
 # Important! change the paths below to match your project setup
 css_dir = "public/styles" # update to the path of your css files.
@@ -14,4 +14,3 @@ javascripts_dir = "public/scripts" # update to the path of your script files.
 
 line_comments = false # if debugging (or using Mixture chrome extension - set this to true)
 cache = true
-color_output = false # required for Mixture
