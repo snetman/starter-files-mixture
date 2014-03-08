@@ -1,4 +1,5 @@
 {
+  "customRuby": true,
   "debug": false,
   "domain": null,
   "ignoreDir": "client-builds",
