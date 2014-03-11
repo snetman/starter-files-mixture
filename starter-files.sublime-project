@@ -2,9 +2,20 @@
 	"folders":
 	[
 		{
-			"path": "/Users/snetman/Sites/starter-files-mixture",
-            "file_exclude_patterns": ["apple-touch*", "*.ico", "package.png", "windows-8-tile*", "*.sublime-*"],
-            "folder_exclude_patterns": ["client-builds", "converted-html"]
+			"file_exclude_patterns":
+			[
+				"apple-touch*",
+				"*.ico",
+				"package.png",
+				"windows-8-tile*",
+				"*.sublime-*"
+			],
+			"folder_exclude_patterns":
+			[
+				"client-builds",
+				"converted-html"
+			],
+			"path": "/Users/snetman/Sites/starter-files-mixture"
 		}
 	]
 }
