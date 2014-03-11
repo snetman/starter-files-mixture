@@ -10,10 +10,23 @@
 </head>
 
 <body{% block bodyclass %}{% endblock %}>
+
   {% include "hub/global-header" %}
+
   <section id="Content">
-      {% block content %}{% endblock %}
+
+    <div class="lc">
+
+    {% block aside %}{% endblock %}
+
+    {% block main %}{% endblock %}
+
+    </div>
+    <!--/.lc-->
+
   </section>
+  <!--/#Content-->
+
   {% include "hub/global-footer" %}
   {% include "hub/foot/scripts" %}
 </body>

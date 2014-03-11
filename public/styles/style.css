@@ -1269,15 +1269,31 @@ td {
 
 /*  Templates
    ======================================================= */
-.l-2col {
+.l-2col #Content {
   *zoom: 1;
 }
-.l-2col:before, .l-2col:after {
+.l-2col #Content:before, .l-2col #Content:after {
   display: table;
   content: "";
 }
-.l-2col:after {
+.l-2col #Content:after {
   clear: both;
+}
+@media (min-width: 46.75em) {
+  .l-2col .l-main {
+    float: left;
+    width: 65%;
+  }
+}
+.l-2col .l-aside {
+  margin-bottom: 3rem;
+}
+@media (min-width: 46.75em) {
+  .l-2col .l-aside {
+    float: right;
+    width: 30%;
+    margin-bottom: 0;
+  }
 }
 
 /* =======================================================
@@ -2389,6 +2405,9 @@ td {
   text-decoration: none;
 }
 
+.section-nav > h4 {
+  margin-bottom: 0.75rem;
+}
 .section-nav > ul {
   border: 1px solid #dddddd;
 }
@@ -2460,34 +2479,34 @@ td {
 
 /*
 .nav {
-	clear: both;
-	overflow: hidden;
-	max-height: 0;
+  clear: both;
+  overflow: hidden;
+  max-height: 0;
 
-	a {
-		display: block;
-		padding: $pad;
-		border-top: 1px solid $gray-light-2;
-	}
+  a {
+    display: block;
+    padding: $pad;
+    border-top: 1px solid $gray-light-2;
+  }
 
-	&.is-active {
-		max-height: 40em;
-	}
+  &.is-active {
+    max-height: 40em;
+  }
 
-	@media all and (min-width: $bp-med) {
-		max-height: none;
-		float: right;
-		clear: none;
+  @media all and (min-width: $bp-med) {
+    max-height: none;
+    float: right;
+    clear: none;
 
-		li {
-			float: left;
-		}
+    li {
+      float: left;
+    }
 
-		a {
-			border: 0;
-		}
+    a {
+      border: 0;
+    }
 
-	}
+  }
 }
 */
 /*  Nav list
@@ -2524,20 +2543,20 @@ td {
 /*
 
 .pagination {
-	overflow: hidden;
+  overflow: hidden;
 
-	li {
-		float: left;
-		border-right: 1px solid $gray-light-2;
+  li {
+    float: left;
+    border-right: 1px solid $gray-light-2;
 
-		&:last-child {
-			border: 0;
-		}
-	}
+    &:last-child {
+      border: 0;
+    }
+  }
 
-	a {
-		padding: $pad;
-	}
+  a {
+    padding: $pad;
+  }
 }
 */
 /* =======================================================
@@ -2645,6 +2664,19 @@ td {
   border-radius: 20px;
   background: #fff;
   border: 4px solid #dddddd;
+}
+.timeline > li.now:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -.95em;
+  width: 12px;
+  height: 12px;
+  margin-left: 8px;
+  margin-top: 8px;
+  border-radius: 12px;
+  background: #007aff;
+  z-index: 1;
 }
 
 .timeline .tl-content {

@@ -7,23 +7,23 @@
 .lc {
   position: relative;
   clear: both;
-	max-width: $grid-max;	
-	margin: 0 auto;
-	padding: 0 $grid-padding;
-		
-	@include breakpoint($bp-med) {
-	  padding: {
-  	  left: $grid-padding-med;
-  	  right: $grid-padding-med;
-	  }
-	}
+  max-width: $grid-max;
+  margin: 0 auto;
+  padding: 0 $grid-padding;
 
-	@include breakpoint($bp-large) {
-	  padding: {
-  	  left: $grid-padding-large;
-  	  right: $grid-padding-large;
-	  }
-	}
+  @include breakpoint($bp-med) {
+    padding: {
+      left: $grid-padding-med;
+      right: $grid-padding-med;
+    }
+  }
+
+  @include breakpoint($bp-large) {
+    padding: {
+      left: $grid-padding-large;
+      right: $grid-padding-large;
+    }
+  }
 }
 
 // Main containers
@@ -46,12 +46,25 @@
 // Two Column Layout
 // Standard two column layout with main and sidebar column
 .l-2col {
-	@include clearfix;
 
-	.l-main {
-	}
-	
-	.l-sidebar {
-	}
-	
+  #Content {
+    @include clearfix;
+  }
+
+  .l-main {
+    @include breakpoint ($bp-med) {
+      float: left;
+      width: 65%;
+    }
+  }
+
+  .l-aside {
+    margin-bottom: $space-double;
+    @include breakpoint ($bp-med) {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+  }
+
 }
