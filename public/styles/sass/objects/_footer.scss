@@ -11,10 +11,6 @@
 
 	a {
 		color: $body-color;
-		text-decoration: none;
-		&:hover,
-		&:active {
-			text-decoration: underline;
-		}
+		@include incognitolink;
 	}
 }

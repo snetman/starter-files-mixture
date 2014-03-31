@@ -21,18 +21,14 @@
 //
 
 .section-nav {
-  > h4 {
-    margin-bottom: $space-half;
-  }
-
   > ul {
     border: 1px solid $gray-light-3;
   }
 
   li {
-    border-top: 1px solid $gray-light-3;
-    &:first-child {
-      border-top-width: 0;
+    border-bottom: 1px solid $gray-light-3;
+    &:last-child {
+      border-bottom-width: 0;
     }
   }
 
@@ -55,14 +51,13 @@
 
   .pointer {
     position: absolute;
-    right: .5em;
+    right: 0;//.5em;
     top: 50%;
-    margin-top: -.75em;
+    margin-top: -16px;
     color: $gray-light-4;
 
     // State
     display: none;
-
   }
 
   // You are here
@@ -87,6 +82,57 @@
 .action-nav {
   > ul li {
     display: inline-block;
+  }
+}
+
+//
+// Jump nav
+//
+
+.jump-nav {
+  @extend .section-nav;
+}
+
+//
+// Collapsing nav
+// Used to collapse section and jump navs for RWD
+//
+
+/*
+Markup:
+
+  <nav class="nav jump-nav collapse-nav">
+    <h4 class="title">Optional title:</h4>
+    <ul>
+      <li><a href="#">Menu <b class="pointer" aria-hidden="true">&darr;</b></a></li>
+      <li><a href="#">Nav items continue from here...<a></li>
+    </ul>
+  </nav>
+*/
+
+.collapse-nav {
+  @include breakpoint(0 $bp-med) {
+
+    > ul > li:first-child .pointer {
+      display: block;
+    }
+
+    &.is-collapsed {
+      > ul > li {
+        display: none;
+      }
+      > ul > li:first-child {
+        display: block;
+        border-bottom-width: 0;
+      }
+    }
+
+  }
+
+  @include breakpoint($bp-med) {
+    > ul > li:first-child {
+      display: none;
+    }
   }
 }
 
@@ -125,88 +171,59 @@
   }
 }
 
-/*
-.nav {
-  clear: both;
-  overflow: hidden;
-  max-height: 0;
+//
+// Pagination
+//
 
-  a {
-    display: block;
-    padding: $pad;
-    border-top: 1px solid $gray-light-2;
-  }
-
-  &.is-active {
-    max-height: 40em;
-  }
-
-  @media all and (min-width: $bp-med) {
-    max-height: none;
-    float: right;
-    clear: none;
+.page-nav {
+  > ul {
+    @include clearfix;
 
     li {
       float: left;
+      border-right: $border-width $border-style $border-color;
+      &:last-child {
+        border-right-width: 0;
+      }
+
+      a {
+        display: block;
+        padding: $space-quarter $space-half;
+        min-width: 44px;
+        text-align: center;
+      }
     }
 
-    a {
-      border: 0;
+    // states
+
+    .is-disabled,
+    .is-disabled a {
+      color: $gray-light-3;
+    }
+    .is-current,
+    .is-current a {
+      color: $body-color;
+      font-weight: $font-weight-headline;
     }
 
+  }
+
+  // Types
+
+  &-full {
+    > ul {
+      @include flexbox;
+      border: $border-width $border-style $border-color;
+
+      li {
+        float: none;
+        @include flex(1);
+        background-color: $gray-light;
+
+        a:hover {
+          background-color: $white;
+        }
+      }
+    }
   }
 }
-*/
-
-/*  Nav list
-   ======================================================= */
-/*
-.nav-list {
-  @include clearfix;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  > li {
-    border-right: $border-width $border-style $border-color;
-    margin: 0;
-    padding: 0 $space-half;
-    float: left;
-
-    &:first-child {
-      padding-left: 0;
-    }
-
-    &:last-child {
-      border-right-width: 0;
-    }
-
-    a {
-      display: block;
-    }
-  }
-}
-*/
-
-/*  Pagination
-   ======================================================= */
-
-/*
-
-.pagination {
-  overflow: hidden;
-
-  li {
-    float: left;
-    border-right: 1px solid $gray-light-2;
-
-    &:last-child {
-      border: 0;
-    }
-  }
-
-  a {
-    padding: $pad;
-  }
-}
-*/

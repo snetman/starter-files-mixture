@@ -46,17 +46,11 @@
 .g-2up {
 
   @include breakpoint($bp-med) {
-    .gi {
-      float: left;
-      width: 48%;
-      margin-right: 3%;
-    }
-    .gi:nth-child(2n) {
-      float: right;
-      margin-right: 0;
-    }
-    .gi:nth-child(2n+1) {
-      clear: both;
+    .gi,
+    > div,
+    > li {
+      @include gallery(6);
+      margin-bottom: $space;
     }
   }
 
@@ -69,17 +63,37 @@
 .g-3up {
 
   @include breakpoint($bp-med) {
-    .gi {
-      float: left;
-      width: 31%;
-      margin-right: 3.5%;
+    .gi,
+    > div,
+    > li {
+      @include gallery(4);
+      margin-bottom: $space;
     }
-    .gi:nth-child(3n) {
-      float: right;
-      margin-right: 0;
+  }
+
+}
+
+//
+//  3-up max grid
+//
+
+.g-3up-max {
+
+  @include breakpoint($bp-med $bp-large) {
+    .gi,
+    > div,
+    > li {
+      @include gallery(4);
+      margin-bottom: $space;
     }
-    .gi:nth-child(3n+1) {
-      clear: both;
+  }
+
+  @include breakpoint($bp-large) {
+    .gi,
+    > div,
+    > li {
+      @include gallery(4);
+      margin-bottom: $space;
     }
   }
 
@@ -92,17 +106,11 @@
 .g-4up {
 
   @include breakpoint($bp-med) {
-    .gi {
-      float: left;
-      width: 23%;
-      margin-right: 2.5%;
-    }
-    .gi:nth-child(4n) {
-      float: right;
-      margin-right: 0;
-    }
-    .gi:nth-child(4n+1) {
-      clear: both;
+    .gi,
+    > div,
+    > li {
+      @include gallery(3);
+      margin-bottom: $space;
     }
   }
 

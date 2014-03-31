@@ -20,11 +20,24 @@
     position: relative;
     border: $border-width $border-style $border-color;
     margin: 0;
-    padding: $space-half+$space-quarter $space-double $space-half+$space-quarter $space-half;
+    padding: {
+      top: $space-half+$space-quarter;
+      right: $space-double;
+      bottom: $space-half+$space-quarter;
+      left: $space-half;
+    }
     background-color: $gray-light;
 
     & + div {
       border-top-width: 0;
+    }
+
+    // If there's a brick header...
+
+    > h2,
+    > h3,
+    > .title {
+      margin: 0 0 $space-half;
     }
 
     // Change form control backgrounds if they are nested here for contrast

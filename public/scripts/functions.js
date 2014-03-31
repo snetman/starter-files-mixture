@@ -1,44 +1,31 @@
-// Browser detection for when you get desparate. A measure of last resort.
-// http://rog.ie/post/9089341529/html5boilerplatejs
+$(document).ready(function() {
 
-// var b = document.documentElement;
-// b.setAttribute('data-useragent',  navigator.userAgent);
-// b.setAttribute('data-platform', navigator.platform);
+  console.log( "ready!" );
 
-// sample CSS: html[data-useragent*='Chrome/13.0'] { ... }
-
-
-// remap jQuery to $
-(function($){
-
-
-/* trigger when page is ready */
-$(document).ready(function (){
-
-/* =======================================================
-    Carousel
-   ======================================================= */
+  //
+  // Easyfader carousel
+  //
 
   /*
   $('#Fader').easyFader({
     autoCycle: false,
     slideDur: 7000,
-		effectDur: 500
+    effectDur: 500
   });
-  */
-  /* For other styles of carousel, these are the init functions */
-  /*
+
+  // For other styles of carousel, these are the init functions
+
   $('#Slider').easyFader({
-  	effect: 'slide'
+    effect: 'slide'
   });
   $('#Carousel').easyFader({
-  	effect: 'carousel'
+    effect: 'carousel'
   });
   */
 
-/* =======================================================
-    Toggle responsive nav
-   ======================================================= */
+  //
+  // Toggle the responsive menu
+  //
 
   // Define functions
 
@@ -72,49 +59,73 @@ $(document).ready(function (){
   // Close the nav when I click on the nav area outside the links
   $('#nav').on('click', $closeNav);
 
-});
+  //
+  // Dropdown menus
+  //
 
-/* =======================================================
-    Tabs
-   ======================================================= */
-  /*
-  $tabs = $('.tab');
-  $tabtargets = $('.tab-target');
+  $drop = $('.drop .drop-menu').addClass('is-hidden');
+  $droplink = $('.drop-toggle');
 
-  $tabs.on('click', function(event) {
+  $droplink.click(function(){
+    $(this).siblings('.drop-menu').toggleClass('is-hidden');
+    return false;
+  });
 
-    event.preventDefault(); // Prevent the default behavior so the page doesn't jump
+  // Collapsable nav
 
-    if ($(this).hasClass('is-active')) { // If the clicked tab is currently active...
+  $collapsenav = $('.collapse-nav').addClass('is-collapsed');
+  $collapselink = $('.collapse-toggle');
+  $collapseitems = $('.collapse-nav > ul > li').not('.collapse-nav > ul > li:first-child');
 
-      $(this).removeClass('is-active'); // De-activate the clicked tab
-      var target = $(this).attr('href'); // Get the target
-      $(target).removeClass('is-active'); // De-activate the target
+  $collapselink.click(function(){
+    $(this).parents('.collapse-nav').toggleClass('is-collapsed');
+    return false;
+  });
 
-    } else { // If the clicked toggle is not currently active...
+  $collapseitems.click(function(){
+    $(this).parents('.collapse-nav').toggleClass('is-collapsed');
+  });
 
-      $tabs.removeClass('is-active'); // De-activate all tabs in case another is active
-      $(this).addClass('is-active'); // Activate the clicked tab
-      $tabtargets.removeClass('is-active'); // De-activate all tab targets
-      var target = $(this).attr('href'); // Get the new target
-      $(target).addClass('is-active'); // Make the new target active
+  // Tabs
 
+  $tabcontent = $('.tabs > .tab-content').addClass('is-hidden');
+  $tabcontent.first().removeClass('is-hidden');
+  $tablink = $('.tabs > ul a');
+
+  $tablink.click(function(){
+    // Set the state of the tabs
+    $(this).parent('li').siblings('li').removeClass('is-active').find('a').removeClass('is-active');
+    $(this).addClass('is-active');
+    $(this).parent('li').addClass('is-active');
+
+    // Set the state of the content
+    $targetcontent = $(this).attr('href');
+    $tabcontent.addClass('is-hidden');
+    $($targetcontent).removeClass('is-hidden');
+
+    return false;
+  });
+
+  // Show/hide more links
+
+  $morelinks = $('.more-link');
+
+  // Handle the showing
+  $morelinks.click(function(){
+    $targetcontent = $(this).attr('href'); // Get the target
+    // If the target is hidden
+    if ($($targetcontent).hasClass('is-hidden')) {
+      $($targetcontent).removeClass('is-hidden'); // Show it
+      $(this).find('.showtext').addClass('is-hidden'); // Hide the "show" text
+      $(this).find('.hidetext').removeClass('is-hidden'); // Show the "hide" text
+    // If the taret is showing
+    } else {
+      $($targetcontent).addClass('is-hidden'); // Hide it
+      $(this).find('.hidetext').addClass('is-hidden'); // Hide the "hide" text
+      $(this).find('.showtext').removeClass('is-hidden'); // Show the "show" text
     }
 
+    return false;
   });
-  */
 
-/* optional triggers
-
-$(window).load(function() {
-
-});
-
-$(window).resize(function() {
-
-});
-
-*/
-
-
-})(window.jQuery);
+}); // End document ready

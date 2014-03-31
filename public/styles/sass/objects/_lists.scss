@@ -2,10 +2,6 @@
     Lists
    ======================================================= */
 
-/* TODO: Review these make sure they don't suck and are redundant to nav */
-
-/* TODO: Check out Cornerstone's lists for things like link lists with counts */
-
 //
 //  Inline lists
 //
@@ -15,6 +11,10 @@
     > li {
         display: inline-block;
         list-style: none;
+        margin-right: .25em;
+        &:last-child {
+          margin-right: 0;
+        }
     }
 }
 
@@ -23,30 +23,29 @@
 //
 
 .slat-list {
-    border-bottom: $border-width $border-style $border-color;
-    margin-left: 0;
-    padding-left: 0;
+  border-bottom: $border-width $border-style $border-color;
+  margin-left: 0;
+  padding-left: 0;
+  > li {
+      list-style: none;
+      border-top: $border-width $border-style $border-color;
+      padding: $space-half 0;
+  }
+
+  // Bordered slat list
+
+  &-bordered {
     > li {
-        list-style: none;
-        border-top: $border-width $border-style $border-color;
+      border: $border-width $border-style $border-color;
+      border-bottom-width: 0;
+      padding: $space-half;
     }
+  }
 }
 
-// social list
-
-/*
-.social-list {
-    li {
-        margin: 0 0.4rem $space 0;
-    }
-
-    a {
-        font-size: 1.6em;
-    }
-}
-*/
-
+//
 // Headline list
+//
 
 .headline-list {
     margin-bottom: $space;
@@ -65,7 +64,9 @@
     }
 }
 
+//
 // Post list
+//
 
 .post-list {
     li {
@@ -73,7 +74,9 @@
     }
 }
 
+//
 // Bullet list
+//
 
 .bullet-list {
     list-style: disc;
@@ -85,7 +88,9 @@
     }
 }
 
+//
 // Numbered list
+//
 
 .numbered-list {
     margin: 0 0 $space 1em;
@@ -106,7 +111,9 @@
     }
 }
 
+//
 // Text list
+//
 
 .text-list {
     margin: 0 0 $space;

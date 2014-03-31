@@ -15,6 +15,7 @@ xcuserdata
 
 # sass noise
 .sass-cache/*
+*.scssc
 
 # svn & cvs
 .svn

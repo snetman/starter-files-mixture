@@ -2,7 +2,9 @@
     Buttons
    ======================================================= */
 
+//
 // Standard buttons
+//
 
 .btn {
 	display: inline-block;
@@ -17,7 +19,7 @@
 	background: $btn-background-color;
 	background-image: none;
 	color: $btn-color;
-  	
+
 	&:hover,
 	&:focus {
 		background-color: $btn-background-color-hover;
@@ -43,7 +45,9 @@
   }
 }
 
+//
 // Alternate buttons
+//
 
 .btn-primary {
   background-color: $btn-primary-background-color;
@@ -81,9 +85,21 @@
   }
 }
 
+.btn-outline {
+  background-color: $btn-outline-background-color;
+  border-color: $btn-outline-border-color;
+  color: $btn-outline-color;
+  &:hover,
+  &:focus {
+    background-color: $btn-outline-background-color-hover;
+    border-color: $btn-outline-border-color-hover;
+    color: $btn-outline-color-hover;
+  }
+}
 
-/*  Link buttons
-   ======================================================= */
+//
+// Link buttons
+//
 
 .btn-link {
   border-radius: 0;
@@ -109,9 +125,31 @@
   }
 }
 
+// Alternate action buttons
 
-/*  Sized buttons
-   ======================================================= */
+.btn-alt {
+  @extend .btn-link;
+  padding: {
+    left: 0 !important;
+    right: 0 !important;
+  }
+  .link {
+    text-decoration: underline;
+  }
+  .nolink {
+    color: $body-color;
+    text-decoration: none;
+  }
+  &:hover {
+    .link {
+      text-decoration: none;
+    }
+  }
+}
+
+//
+// Sized buttons
+//
 
 // Full button
 
@@ -122,7 +160,9 @@
 // Small button
 
 .btn-small {
-	padding: $btn-padding-small;
+  padding: $btn-padding-small;
+  padding-bottom: $btn-padding-small * 1.5;
+  font-size: $font-size-small;
 }
 
 // Tiny button
@@ -139,21 +179,32 @@
 	font-size: $font-size-large;
 }
 
-/*  Button group
-   ======================================================= */
+//
+// Button group
+//
 
 .btn-group {
-  display: table;
-  width: 100%;
-  .btn-group-inner {
-    display: table-row;
-    .btn {
-      display: table-cell;
-      border-right-width: 0;
-      &:last-child {
-        border-right-width: $border-width;
-      }
+  .btn {
+    vertical-align: middle;
+    margin-bottom: $space-quarter;
+    margin-right: $space-quarter;
+    &:last-child {
+      margin-right: 0;
     }
+  }
+}
+
+.btn-group-full {
+  @include flexbox;
+  width: 100%;
+  .btn {
+    @include flex(1);
+  }
+}
+
+.btn-group-flush {
+  .btn {
+    margin-bottom: 0;
   }
 }
 
