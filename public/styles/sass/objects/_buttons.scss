@@ -7,32 +7,34 @@
 //
 
 .btn {
-	display: inline-block;
-	border: $btn-border-width $btn-border-style $btn-border-color;
-	margin-bottom: 0;
-	padding: $btn-padding;
-	font-weight: $font-weight-headline;
-	line-height: 1;
-	text-align: center;
-	text-decoration: none;
+  display: inline-block;
+  border: $btn-border-width $btn-border-style $btn-border-color;
+  border-radius: $btn-border-radius;
+  margin-bottom: 0;
+  padding: $btn-padding;
+  font-weight: $font-weight-headline;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
   white-space: nowrap;
-	background: $btn-background-color;
-	background-image: none;
-	color: $btn-color;
+  background: $btn-background-color;
+  background-image: none;
+  color: $btn-color;
 
-	&:hover,
-	&:focus {
-		background-color: $btn-background-color-hover;
-		border-color: $btn-border-color-hover;
-		color: $btn-color-hover;
-		text-decoration: none;
-	}
+  &:hover,
+  &:focus {
+    background-color: $btn-background-color-hover;
+    border-color: $btn-border-color-hover;
+    color: $btn-color-hover;
+    text-decoration: none;
+  }
 
   &:active,
   &.active {
     outline: 0;
+    background-color: $btn-background-color-active;
     background-image: none;
-    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    // box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
   }
 
   &.disabled,
@@ -45,9 +47,7 @@
   }
 }
 
-//
 // Alternate buttons
-//
 
 .btn-primary {
   background-color: $btn-primary-background-color;
@@ -58,6 +58,10 @@
     background-color: $btn-primary-background-color-hover;
     border-color: $btn-primary-border-color-hover;
     color: $btn-primary-color-hover;
+  }
+  &:active,
+  &.active {
+    background-color: $btn-primary-background-color-active;
   }
 }
 
@@ -71,6 +75,10 @@
     border-color: $btn-success-border-color-hover;
     color: $btn-success-color-hover;
   }
+  &:active,
+  &.active {
+    background-color: $btn-success-background-color-active;
+  }
 }
 
 .btn-danger {
@@ -83,6 +91,10 @@
     border-color: $btn-danger-border-color-hover;
     color: $btn-danger-color-hover;
   }
+  &:active,
+  &.active {
+    background-color: $btn-danger-background-color-active;
+  }
 }
 
 .btn-outline {
@@ -94,6 +106,10 @@
     background-color: $btn-outline-background-color-hover;
     border-color: $btn-outline-border-color-hover;
     color: $btn-outline-color-hover;
+  }
+  &:active,
+  &.active {
+    background-color: $btn-outline-background-color-active;
   }
 }
 
