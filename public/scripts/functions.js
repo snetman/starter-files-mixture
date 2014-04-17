@@ -71,7 +71,9 @@ $(document).ready(function() {
     return false;
   });
 
+  //
   // Collapsable nav
+  //
 
   $collapsenav = $('.collapse-nav').addClass('is-collapsed');
   $collapselink = $('.collapse-toggle');
@@ -86,7 +88,9 @@ $(document).ready(function() {
     $(this).parents('.collapse-nav').toggleClass('is-collapsed');
   });
 
+  //
   // Tabs
+  //
 
   $tabcontent = $('.tabs > .tab-content').addClass('is-hidden');
   $tabcontent.first().removeClass('is-hidden');
@@ -106,7 +110,20 @@ $(document).ready(function() {
     return false;
   });
 
+  //
   // Show/hide more links
+  //
+
+  /*
+  Markup:
+  <div id="UniqueName" class="more-content is-hidden">
+    Content here...
+  </div>
+  <a class="more-link" href="#UniqueName">
+    <span class="showtext">Show this</span>
+    <span class="hidetext is-hidden">Hide this</span>
+  </a>
+  */
 
   $morelinks = $('.more-link');
 
